@@ -228,6 +228,14 @@
       border-color: transparent transparent #ECD7A8 transparent;
     }
 
+    .curator-intro-sub {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      font-weight: 400;
+    }
+
     .hero-headline {
       font-family: var(--font-accent);
       font-size: 1.7rem;
@@ -447,6 +455,102 @@
       padding: 2px 7px;
       border-radius: 4px;
       font-weight: 700;
+    }
+
+    .optional-tag {
+      font-size: 0.72rem;
+      background: var(--green-light);
+      color: var(--green-leaf);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .season-subbox {
+      margin-top: 14px;
+      background: #F9F5EC;
+      border: 1.5px dashed #DFCDB5;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      transition: all 0.25s ease;
+    }
+
+    .season-subbox.season-required {
+      background: #F4F9F5;
+      border-color: var(--green-leaf);
+      border-style: solid;
+      box-shadow: 0 3px 10px rgba(74, 124, 89, 0.12);
+    }
+
+    .season-subbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .season-subbox-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .season-subbox-hint {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .season-chip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .season-mini-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-warm);
+      border-radius: var(--radius-sm);
+      padding: 10px 8px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .season-mini-card:hover {
+      border-color: #BBA995;
+      transform: translateY(-1px);
+    }
+
+    .season-mini-card.checked {
+      background: var(--green-light);
+      border-color: var(--green-leaf);
+      box-shadow: 0 3px 10px rgba(74, 124, 89, 0.16);
+    }
+
+    .season-mini-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .season-mini-card.checked .season-mini-title {
+      color: var(--text-green);
+    }
+
+    .season-mini-desc {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      line-height: 1.3;
     }
 
     .section-hint {
@@ -945,6 +1049,12 @@
       line-height: 1.55;
     }
 
+    .reason-sub-block {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-warm);
+    }
+
     /* Tags Row */
     .gift-tags-row {
       display: flex;
@@ -1067,6 +1177,9 @@
       .choice-grid.col-3 {
         grid-template-columns: repeat(2, 1fr);
       }
+      .season-chip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .mbti-grid {
         grid-template-columns: repeat(4, 1fr);
       }
@@ -1122,7 +1235,8 @@
         </div>
 
         <div class="curator-speech-bubble">
-          "어떤 선물을 주면 상대가 진심으로 기뻐할까 고민되시나요? 받는 분의 취향을 콕 집어 실패 없는 최고의 선물을 찾아드릴게요! 🌰"
+          "안녕하세요! 소중한 사람에게 전할 따뜻한 마음을 함께 찾아드리는 포근선물의 큐레이터, 토리입니다~"
+          <span class="curator-intro-sub">받는 분의 연령대와 취향, 계절과 상황에 꼭 맞는 포근한 선물을 함께 골라드릴게요! 🌰</span>
         </div>
 
         <h1 class="hero-headline">상대의 마음에 쏙 드는<br>센스 있는 맞춤 선물 찾기</h1>
@@ -1245,7 +1359,7 @@
                 <span class="check-icon">🎒</span>
                 <span class="check-label">10대</span>
               </div>
-              <span class="check-desc">학생 · 청소년 트렌드</span>
+              <span class="check-desc">학생 감성 · 트렌디한 취향</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('age', '20s_early', this)">
@@ -1257,7 +1371,7 @@
                 <span class="check-icon">🎓</span>
                 <span class="check-label">20대 초반</span>
               </div>
-              <span class="check-desc">대학생 · 새내기 감성</span>
+              <span class="check-desc">대학생 감성 · 다채로운 취향</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('age', '20s_late', this)">
@@ -1269,7 +1383,7 @@
                 <span class="check-icon">💼</span>
                 <span class="check-label">20대 후반</span>
               </div>
-              <span class="check-desc">사회초년생 · 직장인</span>
+              <span class="check-desc">사회초년생 · 감각적인 실용성</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('age', '30s', this)">
@@ -1281,7 +1395,7 @@
                 <span class="check-icon">🏡</span>
                 <span class="check-label">30대</span>
               </div>
-              <span class="check-desc">라이프스타일 & 완성도</span>
+              <span class="check-desc">실용성과 취향 · 일상 속 여유</span>
             </div>
           </div>
           <div class="check-card" style="grid-column: span 2;" onclick="selectOption('age', '40s_plus', this)">
@@ -1293,7 +1407,80 @@
                 <span class="check-icon">☕</span>
                 <span class="check-label">40대 이상</span>
               </div>
-              <span class="check-desc">품격 · 실용성 · 건강과 웰니스</span>
+              <span class="check-desc">품격 있는 휴식 · 건강한 일상</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 받는 분과의 관계 (추천 정밀도 향상) -->
+      <div class="question-section" id="section-relationship">
+        <div class="section-label-row">
+          <div class="section-title">
+            <span>받는 분과의 관계</span>
+            <span class="optional-tag">선택 반영</span>
+          </div>
+          <span class="section-hint">단일 선택</span>
+        </div>
+        <div class="choice-grid col-2">
+          <div class="check-card" onclick="selectOptionalToggle('relationship', 'friend', this)">
+            <div class="custom-check-box">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-content">
+              <div class="check-title-row">
+                <span class="check-icon">👫</span>
+                <span class="check-label">친구</span>
+              </div>
+              <span class="check-desc">편안하고 센스 있게 마음을 전하는 사이</span>
+            </div>
+          </div>
+          <div class="check-card" onclick="selectOptionalToggle('relationship', 'partner', this)">
+            <div class="custom-check-box">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-content">
+              <div class="check-title-row">
+                <span class="check-icon">💕</span>
+                <span class="check-label">연인 / 배우자</span>
+              </div>
+              <span class="check-desc">특별한 감성과 애정을 담고 싶은 사이</span>
+            </div>
+          </div>
+          <div class="check-card" onclick="selectOptionalToggle('relationship', 'family', this)">
+            <div class="custom-check-box">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-content">
+              <div class="check-title-row">
+                <span class="check-icon">🏡</span>
+                <span class="check-label">가족 / 부모님</span>
+              </div>
+              <span class="check-desc">따뜻한 보살핌과 감사를 전하는 사이</span>
+            </div>
+          </div>
+          <div class="check-card" onclick="selectOptionalToggle('relationship', 'colleague', this)">
+            <div class="custom-check-box">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-content">
+              <div class="check-title-row">
+                <span class="check-icon">💼</span>
+                <span class="check-label">직장 동료 / 선후배</span>
+              </div>
+              <span class="check-desc">부담 없이 예의와 센스를 갖추는 사이</span>
+            </div>
+          </div>
+          <div class="check-card" style="grid-column: span 2;" onclick="selectOptionalToggle('relationship', 'acquaintance', this)">
+            <div class="custom-check-box">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <div class="check-content">
+              <div class="check-title-row">
+                <span class="check-icon">🤝</span>
+                <span class="check-label">지인 / 은사님</span>
+              </div>
+              <span class="check-desc">정중하고 따뜻한 호감을 전하고 싶은 사이</span>
             </div>
           </div>
         </div>
@@ -1495,7 +1682,7 @@
                 <span class="check-icon">🍂</span>
                 <span class="check-label">계절 / 명절</span>
               </div>
-              <span class="check-desc">환절기 케어 & 명절의 따스함</span>
+              <span class="check-desc">사계절 감성 · 환절기 · 명절 선물</span>
             </div>
           </div>
           <div class="check-card" style="grid-column: span 2;" onclick="selectOption('occasion', 'casual', this)">
@@ -1508,6 +1695,43 @@
                 <span class="check-label">소소한 선물</span>
               </div>
               <span class="check-desc">부담 없이 건네는 일상의 깜짝 서프라이즈</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 계절 및 명절 세부 선택 -->
+        <div class="season-subbox" id="season-subbox">
+          <div class="season-subbox-header">
+            <div class="season-subbox-title">
+              <span>🍃 계절 / 명절 감성 선택</span>
+              <span class="optional-tag" id="season-sub-badge">선택 반영</span>
+            </div>
+            <span class="season-subbox-hint" id="season-sub-hint">계절/명절 분위기까지 반영하고 싶다면 골라주세요</span>
+          </div>
+          <div class="season-chip-grid">
+            <div class="season-mini-card" data-season="spring" onclick="selectSeasonType('spring', this)">
+              <span class="season-mini-title">🌸 봄</span>
+              <span class="season-mini-desc">꽃향기 · 화사한 소품 · 피크닉</span>
+            </div>
+            <div class="season-mini-card" data-season="summer" onclick="selectSeasonType('summer', this)">
+              <span class="season-mini-title">🌊 여름</span>
+              <span class="season-mini-desc">청량한 향 · 시원한 소재 · 쿨링</span>
+            </div>
+            <div class="season-mini-card" data-season="autumn" onclick="selectSeasonType('autumn', this)">
+              <span class="season-mini-title">📚 가을</span>
+              <span class="season-mini-desc">독서용품 · 감성 문구 · 포근 무드</span>
+            </div>
+            <div class="season-mini-card" data-season="winter" onclick="selectSeasonType('winter', this)">
+              <span class="season-mini-title">❄️ 겨울</span>
+              <span class="season-mini-desc">따뜻한 차 · 담요 · 보온 아이템</span>
+            </div>
+            <div class="season-mini-card" data-season="between_seasons" onclick="selectSeasonType('between_seasons', this)">
+              <span class="season-mini-title">🧴 환절기</span>
+              <span class="season-mini-desc">핸드크림 · 보습 · 계절 케어</span>
+            </div>
+            <div class="season-mini-card" data-season="holiday" onclick="selectSeasonType('holiday', this)">
+              <span class="season-mini-title">🏮 명절</span>
+              <span class="season-mini-desc">정성 가득 · 감사 · 건강 선물</span>
             </div>
           </div>
         </div>
@@ -1532,7 +1756,7 @@
                 <span class="check-icon">🪙</span>
                 <span class="check-label">1만 원 이하</span>
               </div>
-              <span class="check-desc">부담 제로 가벼운 커피&디저트 기프티콘, 소소한 힐링템</span>
+              <span class="check-desc">10,000원 이하</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('budget', '10k_30k', this)">
@@ -1544,7 +1768,7 @@
                 <span class="check-icon">🏷️</span>
                 <span class="check-label">1 ~ 3만 원대</span>
               </div>
-              <span class="check-desc">센스 있는 뷰티 & 홈 인테리어 소품, 인기 브랜드 핸드크림</span>
+              <span class="check-desc">10,000원 ~ 30,000원</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('budget', '30k_50k', this)">
@@ -1556,7 +1780,7 @@
                 <span class="check-icon">🎁</span>
                 <span class="check-label">3 ~ 5만 원대</span>
               </div>
-              <span class="check-desc">가장 만족도 높은 베스트셀러! 이솝, 캔들워머, 고급 식기</span>
+              <span class="check-desc">30,000원 ~ 50,000원</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('budget', '50k_100k', this)">
@@ -1568,7 +1792,7 @@
                 <span class="check-icon">💎</span>
                 <span class="check-label">5 ~ 10만 원대</span>
               </div>
-              <span class="check-desc">소중한 사람을 위한 프리미엄 향수, 가죽 지갑, 감성 블루투스 스피커</span>
+              <span class="check-desc">50,000원 ~ 100,000원</span>
             </div>
           </div>
           <div class="check-card" onclick="selectOption('budget', 'over_100k', this)">
@@ -1580,7 +1804,7 @@
                 <span class="check-icon">👑</span>
                 <span class="check-label">10만 원 이상</span>
               </div>
-              <span class="check-desc">평생 기억에 남을 럭셔리 스몰 레더굿즈, 프리미엄 가전, 호텔 식사권</span>
+              <span class="check-desc">100,000원 이상</span>
             </div>
           </div>
         </div>
@@ -1651,12 +1875,13 @@
        1. Curated Gift Database (실제 한국 선물 문화 & 카카오톡 선물하기 인기 선물)
        ========================================================================== */
     const GIFT_DATABASE = [
-      /* 1. 1만 원 이하 (under_10k) */
+      /* 1. 1만 원 이하 (under_10k: <= 10,000원) */
       {
         id: "g_u1",
         name: "스타벅스 e-Gift (아메리카노 & 부드러운 생크림 카스텔라)",
         category: "푸드 / 카페",
         priceRange: "under_10k",
+        priceNumeric: 9500,
         priceDisplay: "약 9,500원",
         icon: "☕",
         badge: "카톡 선물하기 1위",
@@ -1664,6 +1889,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["birthday", "thanks", "casual", "graduation_job"],
+        seasons: ["all"],
+        relationships: ["friend", "colleague", "acquaintance", "partner", "family"],
+        diversityGroup: "cafe_gift",
         mbtiTraits: { E: 5, I: 5, S: 5, N: 5, T: 5, F: 5, J: 5, P: 5 },
         baseReason: "호불호가 전혀 없는 국민 디저트 세트로, 지친 일상 속 기분 좋은 달콤한 휴식을 선물하기에 가장 부담 없고 실패 없는 선물이에요.",
         tags: ["#부담제로", "#호불호0%", "#달콤한휴식"]
@@ -1673,6 +1901,7 @@
         name: "카밀 핸드앤네일 크림 클래식 100ml 듀오 세트",
         category: "뷰티 / 핸드케어",
         priceRange: "under_10k",
+        priceNumeric: 8900,
         priceDisplay: "약 8,900원",
         icon: "🧴",
         badge: "올리브영 스테디셀러",
@@ -1680,6 +1909,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["thanks", "season", "casual", "birthday"],
+        seasons: ["between_seasons", "winter"],
+        relationships: ["friend", "colleague", "acquaintance", "family"],
+        diversityGroup: "hand_care",
         mbtiTraits: { E: 3, I: 5, S: 6, N: 3, T: 6, F: 4, J: 6, P: 3 },
         baseReason: "카모마일 성분의 강력한 보습력으로 손끝까지 촉촉하게 지켜주는 독일 1등 핸드크림! 실용성과 보습력을 모두 챙긴 든든한 선물입니다.",
         tags: ["#독일1위", "#가성비최고", "#환절기필수"]
@@ -1689,6 +1921,7 @@
         name: "복슬복슬 아기 쿼카 캐릭터 인형 키링 & 에어팟 파우치",
         category: "패션 / 소품",
         priceRange: "under_10k",
+        priceNumeric: 9900,
         priceDisplay: "약 9,900원",
         icon: "🧸",
         badge: "SNS 인기 급상승",
@@ -1696,6 +1929,9 @@
         targetGender: ["female", "any"],
         targetAge: ["10s", "20s_early"],
         occasions: ["birthday", "casual", "thanks"],
+        seasons: ["all", "spring"],
+        relationships: ["friend", "partner"],
+        diversityGroup: "keyring_acc",
         mbtiTraits: { E: 5, I: 4, S: 2, N: 6, F: 6, T: 2, P: 5, J: 3 },
         baseReason: "보기만 해도 힐링되는 사랑스러운 쿼카 얼굴이 가방과 에어팟에 포인트를 줘요. 일상 속 귀여운 소확행을 선물하기에 제격이에요.",
         tags: ["#귀여움한도초과", "#가방포인트", "#소확행"]
@@ -1705,6 +1941,7 @@
         name: "메구리즘 스팀 온열 아이마스크 (무향 & 라벤더 5P)",
         category: "힐링 / 웰니스",
         priceRange: "under_10k",
+        priceNumeric: 8500,
         priceDisplay: "약 8,500원",
         icon: "🌙",
         badge: "직장인·수험생 1위",
@@ -1712,6 +1949,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["thanks", "casual", "graduation_job", "season"],
+        seasons: ["between_seasons", "winter", "autumn"],
+        relationships: ["friend", "colleague", "family", "acquaintance"],
+        diversityGroup: "eye_relax",
         mbtiTraits: { E: 3, I: 6, S: 4, N: 5, T: 4, F: 6, J: 5, P: 4 },
         baseReason: "따뜻한 온열 스팀이 피로해진 눈과 굳은 마음을 사르르 녹여줘요. 밤마다 꿀잠을 선물하는 사려 깊은 응원의 메신저입니다.",
         tags: ["#숙면치트키", "#눈피로순삭", "#따뜻한응원"]
@@ -1721,6 +1961,7 @@
         name: "배달의민족 모바일 상품권 10,000원권",
         category: "라이프 / 상품권",
         priceRange: "under_10k",
+        priceNumeric: 10000,
         priceDisplay: "10,000원",
         icon: "🛵",
         badge: "실용성 100점",
@@ -1728,6 +1969,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["thanks", "casual", "graduation_job", "birthday"],
+        seasons: ["all"],
+        relationships: ["friend", "colleague"],
+        diversityGroup: "voucher",
         mbtiTraits: { E: 5, I: 5, S: 6, N: 3, T: 6, F: 3, P: 6, J: 4 },
         baseReason: "혼밥 할 때, 야식이 당길 때 고민 없이 쓸 수 있는 가장 센스 넘치는 실속형 선물! 실용성을 최고로 치는 분들에게 만족도 100%예요.",
         tags: ["#실용주의", "#야식지원군", "#자취방필수"]
@@ -1737,6 +1981,7 @@
         name: "바세린 립테라피 컬러 립밤 & 틴케이스 세트",
         category: "뷰티 / 립케어",
         priceRange: "under_10k",
+        priceNumeric: 9200,
         priceDisplay: "약 9,200원",
         icon: "💄",
         badge: "보습력 검증템",
@@ -1744,6 +1989,9 @@
         targetGender: ["female", "any"],
         targetAge: ["10s", "20s_early", "20s_late"],
         occasions: ["season", "casual", "thanks"],
+        seasons: ["between_seasons", "winter"],
+        relationships: ["friend", "colleague", "acquaintance"],
+        diversityGroup: "lip_care",
         mbtiTraits: { E: 4, I: 4, S: 5, N: 3, T: 4, F: 5, J: 4, P: 4 },
         baseReason: "촉촉한 보습과 자연스러운 생기를 동시에 주는 데일리 립밤이에요. 작고 예쁜 틴케이스로 파우치에 쏙 넣어 다니기 좋아요.",
         tags: ["#촉촉립", "#자연스러운생기", "#파우치필수템"]
@@ -1753,6 +2001,7 @@
         name: "투썸플레이스 떠먹는 스트로베리 초콜릿 생크림(스초생)",
         category: "푸드 / 디저트",
         priceRange: "under_10k",
+        priceNumeric: 6700,
         priceDisplay: "약 6,700원",
         icon: "🍰",
         badge: "투썸 시그니처 1위",
@@ -1760,6 +2009,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["birthday", "casual", "anniversary", "thanks"],
+        seasons: ["all", "spring"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "dessert",
         mbtiTraits: { E: 5, I: 4, S: 4, N: 4, T: 3, F: 6, P: 5, J: 3 },
         baseReason: "크런치 초코볼이 톡톡 씹히는 진한 초콜릿 생크림과 상큼한 딸기의 조합! 기분 전환이 필요할 때 최고의 서프라이즈 디저트예요.",
         tags: ["#스초생", "#기분전환", "#초코딸기진리"]
@@ -1769,56 +2021,229 @@
         name: "원목 감성 북마크 & 모나미 153 프리미엄 볼펜 세트",
         category: "문구 / 오피스",
         priceRange: "under_10k",
+        priceNumeric: 9800,
         priceDisplay: "약 9,800원",
         icon: "✒️",
         badge: "지적인 감성템",
         kakaotag: "각인감성",
-        targetGender: ["male", "any"],
+        targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
-        occasions: ["graduation_job", "thanks", "casual"],
+        occasions: ["graduation_job", "thanks", "casual", "season"],
+        seasons: ["autumn"],
+        relationships: ["colleague", "acquaintance", "friend", "family"],
+        diversityGroup: "stationery",
         mbtiTraits: { E: 2, I: 6, S: 6, N: 4, T: 6, F: 4, J: 6, P: 2 },
-        baseReason: "독서나 플래너 정리를 좋아하는 분에게 깊은 인상을 주는 원목 북마크와 묵직한 메탈 볼펜 세트예요. 단정한 멋이 돋보입니다.",
-        tags: ["#클래식문구", "#독서메이트", "#신입사원"]
+        baseReason: "독서나 플래너 정리를 좋아하는 분에게 깊은 인상을 주는 원목 북마크와 묵직한 메탈 볼펜 세트예요. 가을 감성과 단정한 멋이 돋보입니다.",
+        tags: ["#클래식문구", "#독서메이트", "#가을감성"]
+      },
+      {
+        id: "g_u9",
+        name: "데일리 플라워 미니 리드 디퓨저 50ml (체리블라썸 / 피오니)",
+        category: "리빙 / 프래그런스",
+        priceRange: "under_10k",
+        priceNumeric: 9900,
+        priceDisplay: "약 9,900원",
+        icon: "🌸",
+        badge: "봄맞이 인기템",
+        kakaotag: "꽃향기가득",
+        targetGender: ["female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "housewarming", "casual", "thanks"],
+        seasons: ["spring"],
+        relationships: ["friend", "colleague", "acquaintance"],
+        diversityGroup: "diffuser",
+        mbtiTraits: { E: 4, I: 6, S: 4, N: 6, T: 3, F: 6, J: 4, P: 5 },
+        baseReason: "은은한 벚꽃과 작약 향기가 책상 위나 침대 곁에 산뜻한 봄기운을 불어넣어 주는 미니 디퓨저예요. 화사한 소품으로 공간 분위기를 기분 좋게 바꿔줍니다.",
+        tags: ["#봄꽃디퓨저", "#체리블라썸", "#화사한소품"]
+      },
+      {
+        id: "g_u10",
+        name: "파스텔 린넨 피크닉 텀블러 파우치 & 스트랩 세트",
+        category: "리빙 / 피크닉",
+        priceRange: "under_10k",
+        priceNumeric: 9500,
+        priceDisplay: "약 9,500원",
+        icon: "🧺",
+        badge: "나들이 필수템",
+        kakaotag: "봄소풍감성",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "casual", "birthday"],
+        seasons: ["spring"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "picnic",
+        mbtiTraits: { E: 6, I: 4, S: 5, N: 5, T: 4, F: 5, J: 4, P: 6 },
+        baseReason: "가벼운 봄나들이나 한강 피크닉에 음료와 소지품을 손쉽게 들고 갈 수 있는 파스텔 톤 파우치예요. 화사한 컬러감으로 계절감을 더해줍니다.",
+        tags: ["#봄피크닉", "#파스텔소품", "#산책메이트"]
+      },
+      {
+        id: "g_u11",
+        name: "쿨링 아쿠아 넥스카프 & 휴대용 쿨링 미스트 듀오",
+        category: "라이프 / 여름케어",
+        priceRange: "under_10k",
+        priceNumeric: 9800,
+        priceDisplay: "약 9,800원",
+        icon: "🧊",
+        badge: "무더위 타파템",
+        kakaotag: "시원한여름",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "casual"],
+        seasons: ["summer"],
+        relationships: ["friend", "family", "colleague", "acquaintance"],
+        diversityGroup: "cooling_item",
+        mbtiTraits: { E: 5, I: 4, S: 6, N: 3, T: 6, F: 4, J: 5, P: 5 },
+        baseReason: "시원한 냉감 소재 스카프와 즉각적인 청량감을 주는 쿨링 미스트 구성! 무더운 여름 외출이나 출퇴근길에 상쾌함을 선물할 수 있어요.",
+        tags: ["#여름쿨링", "#시원한소재", "#더위사냥"]
+      },
+      {
+        id: "g_u12",
+        name: "시트러스 버베나 리프레싱 바디 미스트 50ml",
+        category: "뷰티 / 프래그런스",
+        priceRange: "under_10k",
+        priceNumeric: 9900,
+        priceDisplay: "약 9,900원",
+        icon: "🍋",
+        badge: "청량 시트러스",
+        kakaotag: "상쾌한향기",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "casual", "birthday"],
+        seasons: ["summer"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "perfume_mist",
+        mbtiTraits: { E: 6, I: 4, S: 4, N: 5, T: 4, F: 5, J: 4, P: 6 },
+        baseReason: "레몬과 버베나 잎의 톡 쏘는 청량함이 여름철 답답함을 날려주는 가벼운 미스트예요. 땀이 나는 계절에도 산뜻한 잔향을 유지해 줍니다.",
+        tags: ["#청량바디미스트", "#시트러스향", "#여름에센셜"]
+      },
+      {
+        id: "g_u13",
+        name: "코듀로이 감성 패브릭 북커버 & 빈티지 인덱스 스티커 세트",
+        category: "문구 / 독서용품",
+        priceRange: "under_10k",
+        priceNumeric: 9600,
+        priceDisplay: "약 9,600원",
+        icon: "📖",
+        badge: "독서의 계절 1위",
+        kakaotag: "가을책선물",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "casual", "thanks", "birthday"],
+        seasons: ["autumn"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "reading_item",
+        mbtiTraits: { E: 2, I: 7, S: 4, N: 6, T: 4, F: 6, J: 5, P: 4 },
+        baseReason: "도톰한 코듀로이 질감이 책을 포근히 감싸주어 가을 독서 시간을 더욱 특별하게 만들어줘요. 인상 깊은 문장을 기록하는 인덱스 스티커까지 알차게 담았습니다.",
+        tags: ["#가을독서", "#감성북커버", "#책읽는시간"]
+      },
+      {
+        id: "g_u14",
+        name: "트와이닝스(Twinings) 얼그레이 & 카모마일 티백 20입 기프트팩",
+        category: "푸드 / 티",
+        priceRange: "under_10k",
+        priceNumeric: 8900,
+        priceDisplay: "약 8,900원",
+        icon: "🍵",
+        badge: "겨울 티타임 베스트",
+        kakaotag: "따뜻한온기",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "casual"],
+        seasons: ["winter", "autumn"],
+        relationships: ["friend", "colleague", "family", "acquaintance"],
+        diversityGroup: "tea_set",
+        mbtiTraits: { E: 3, I: 6, S: 5, N: 5, T: 4, F: 6, J: 5, P: 4 },
+        baseReason: "쌀쌀한 날씨에 향긋한 홍차와 허브티 한 잔으로 몸과 마음을 녹여주는 따뜻한 선물이에요. 카페인 부담 없는 카모마일까지 함께 있어 누구나 즐기기 좋습니다.",
+        tags: ["#따뜻한차", "#겨울티타임", "#포근한휴식"]
+      },
+      {
+        id: "g_u15",
+        name: "포근한 극세사 보온 수면양말 3켤레 & 파우치 핫팩 세트",
+        category: "리빙 / 보온용품",
+        priceRange: "under_10k",
+        priceNumeric: 9500,
+        priceDisplay: "약 9,500원",
+        icon: "🧦",
+        badge: "겨울 한파 대비",
+        kakaotag: "발끝까지따뜻",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "casual", "thanks"],
+        seasons: ["winter"],
+        relationships: ["friend", "family", "partner", "colleague"],
+        diversityGroup: "warm_wear",
+        mbtiTraits: { E: 4, I: 6, S: 6, N: 4, T: 4, F: 6, J: 5, P: 4 },
+        baseReason: "추운 겨울밤 발끝을 포근하게 감싸주는 도톰한 수면양말과 외출용 핫팩을 함께 구성했어요. 다정한 배려가 고스란히 전해지는 겨울 보온 선물입니다.",
+        tags: ["#보온용품", "#수면양말", "#겨울필수템"]
+      },
+      {
+        id: "g_u16",
+        name: "전통 수제 약과 & 오미자 티백 소담 명절 답례 세트",
+        category: "푸드 / 전통다과",
+        priceRange: "under_10k",
+        priceNumeric: 9800,
+        priceDisplay: "약 9,800원",
+        icon: "🏮",
+        badge: "명절 소담 선물",
+        kakaotag: "전통의정성",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "casual"],
+        seasons: ["holiday"],
+        relationships: ["colleague", "acquaintance", "family", "friend"],
+        diversityGroup: "holiday_food",
+        mbtiTraits: { E: 4, I: 5, S: 6, N: 4, T: 4, F: 6, J: 6, P: 3 },
+        baseReason: "쫀득하고 달콤한 수제 약과에 향긋한 오미자차를 곁들여 명절의 정겨운 인사를 가볍고 정성스럽게 전할 수 있는 선물이에요.",
+        tags: ["#명절답례", "#수제약과", "#따뜻한인사"]
       },
 
-      /* 2. 1 ~ 3만 원대 (10k_30k) */
+      /* 2. 1 ~ 3만 원대 (10k_30k: 10,000원 ~ 30,000원) */
       {
         id: "g_m1",
         name: "논픽션(Nonfiction) 핸드크림 50ml (상탈크림 / 젠틀나잇)",
         category: "뷰티 / 향수",
         priceRange: "10k_30k",
+        priceNumeric: 23000,
         priceDisplay: "약 23,000원",
         icon: "🌿",
         badge: "감성 뷰티 1위",
         kakaotag: "선물랭킹 최상위",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "anniversary", "thanks", "casual"],
+        occasions: ["birthday", "anniversary", "thanks", "casual", "season"],
+        seasons: ["between_seasons", "autumn", "winter"],
+        relationships: ["friend", "partner", "colleague", "acquaintance"],
+        diversityGroup: "hand_care",
         mbtiTraits: { E: 4, I: 6, S: 3, N: 6, T: 3, F: 6, J: 4, P: 5 },
         baseReason: "고급스러운 향과 세련된 패키징으로 받는 사람의 기분을 단번에 설레게 하는 감성 선물! 손을 씻을 때마다 은은한 향이 하루를 채워줘요.",
         tags: ["#감성끝판왕", "#논픽션상탈", "#향기테라피"]
       },
       {
         id: "g_m2",
-        name: "탬버린즈(TAMBURINS) 퍼퓸 쉘 엑스 핸드크림 (CHAMO 카모)",
+        name: "탬버린즈(TAMBURINS) 퍼퓸 쉘 엑스 핸드크림 15ml (CHAMO 카모)",
         category: "뷰티 / 퍼퓸",
         priceRange: "10k_30k",
-        priceDisplay: "약 32,000원",
+        priceNumeric: 20000,
+        priceDisplay: "약 20,000원",
         icon: "🐚",
         badge: "트렌드세터 워너비",
         kakaotag: "품절대란템",
         targetGender: ["female", "any"],
         targetAge: ["10s", "20s_early", "20s_late"],
-        occasions: ["birthday", "anniversary", "casual"],
+        occasions: ["birthday", "anniversary", "casual", "season"],
+        seasons: ["between_seasons", "spring"],
+        relationships: ["friend", "partner"],
+        diversityGroup: "perfume_hand",
         mbtiTraits: { E: 6, I: 4, S: 2, N: 6, T: 3, F: 6, P: 6, J: 3 },
         baseReason: "조개 오브제를 닮은 독특하고 감각적인 패키지와 중독적인 카모 향으로 요즘 가장 핫한 퍼퓸 핸드크림! 센스 있다는 칭찬 100% 보장합니다.",
-        tags: ["#제니핸드크림", "#오브제디자인", "#센스만점"]
+        tags: ["#쉘퍼퓸핸드", "#오브제디자인", "#센스만점"]
       },
       {
         id: "g_m3",
         name: "양키캔들 미니 보티브 캔들 4종 & 캔들워머 세트",
         category: "리빙 / 인테리어",
         priceRange: "10k_30k",
+        priceNumeric: 28900,
         priceDisplay: "약 28,900원",
         icon: "🕯️",
         badge: "집들이·인테리어 베스트",
@@ -1826,15 +2251,19 @@
         targetGender: ["female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
         occasions: ["housewarming", "birthday", "anniversary", "season"],
+        seasons: ["winter", "autumn"],
+        relationships: ["friend", "partner", "family"],
+        diversityGroup: "candle_warmer",
         mbtiTraits: { E: 3, I: 7, S: 4, N: 6, T: 3, F: 7, J: 4, P: 5 },
-        baseReason: "불꽃 없이 안전하게 은은한 조명과 향기를 즐길 수 있어 방안 무드를 아늑하게 바꿔줘요. 집에서 쉬는 시간을 가장 포근하게 만들어줍니다.",
-        tags: ["#집콕힐링", "#아늑한무드등", "#집들이강추"]
+        baseReason: "불꽃 없이 안전하게 은은한 조명과 향기를 즐길 수 있어 방안 무드를 아늑하게 바꿔줘요. 추운 계절 집에서 쉬는 시간을 가장 포근하게 만들어줍니다.",
+        tags: ["#집콕힐링", "#아늑한무드등", "#겨울감성"]
       },
       {
         id: "g_m4",
         name: "오설록 프리미엄 러블리 티 박스 (8종 24입 블렌디드 티)",
         category: "푸드 / 티",
         priceRange: "10k_30k",
+        priceNumeric: 24000,
         priceDisplay: "약 24,000원",
         icon: "🍵",
         badge: "감사선물 1위",
@@ -1842,6 +2271,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
         occasions: ["thanks", "season", "housewarming", "birthday"],
+        seasons: ["winter", "holiday", "autumn"],
+        relationships: ["family", "colleague", "acquaintance", "friend"],
+        diversityGroup: "tea_set",
         mbtiTraits: { E: 3, I: 6, S: 5, N: 4, T: 4, F: 6, J: 6, P: 3 },
         baseReason: "제주 영귤, 웨딩그린티 등 향긋하고 다채로운 차를 한 상자에 담았어요. 따뜻한 차 한 잔으로 정성 어린 마음과 여유를 전해보세요.",
         tags: ["#제주오설록", "#향긋한티타임", "#정성가득"]
@@ -1851,22 +2283,27 @@
         name: "크로우캐년 에나멜 마블 법랑 머그컵 & 실리콘 코스터",
         category: "리빙 / 키친",
         priceRange: "10k_30k",
+        priceNumeric: 25000,
         priceDisplay: "약 25,000원",
         icon: "🥛",
         badge: "홈카페 핫아이템",
         kakaotag: "힙한머그",
         targetGender: ["male", "female", "any"],
-        targetAge: ["10s", "20s_early", "20s_late"],
-        occasions: ["housewarming", "birthday", "casual"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["housewarming", "birthday", "casual", "season"],
+        seasons: ["spring", "summer", "autumn"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "mug_cup",
         mbtiTraits: { E: 5, I: 4, S: 3, N: 6, T: 3, F: 5, P: 6, J: 3 },
-        baseReason: "특유의 감각적인 마블 패턴으로 홈카페 사진을 부르는 잇 아이템! 깨지지 않고 튼튼한 법랑 소재라 데일리 머그로 애용하게 돼요.",
-        tags: ["#크로우캐년", "#마블머그", "#인스타감성"]
+        baseReason: "특유의 감각적인 마블 패턴으로 홈카페와 피크닉 사진을 부르는 잇 아이템! 깨지지 않고 튼튼한 법랑 소재라 데일리 머그로 애용하게 돼요.",
+        tags: ["#크로우캐년", "#마블머그", "#피크닉감성"]
       },
       {
         id: "g_m6",
         name: "벨킨 2-in-1 맥세이프 고속 무선충전 스탠드",
         category: "디지털 / 테크",
         priceRange: "10k_30k",
+        priceNumeric: 29900,
         priceDisplay: "약 29,900원",
         icon: "⚡",
         badge: "테크 덕후 극찬",
@@ -1874,6 +2311,9 @@
         targetGender: ["male", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["graduation_job", "birthday", "casual"],
+        seasons: ["all"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "tech_charger",
         mbtiTraits: { E: 3, I: 5, S: 7, N: 2, T: 7, F: 2, J: 7, P: 3 },
         baseReason: "책상 위 지저분한 케이블을 깔끔하게 정리해 주는 스마트한 고속 무선 충전기! 실용성과 테크 감성을 모두 중시하는 분들에게 최고의 선택입니다.",
         tags: ["#깔끔한데스크", "#무선충전", "#테크실용템"]
@@ -1883,6 +2323,7 @@
         name: "록시땅 시어 버터 핸드크림 & 스틱 립밤 듀오 세트",
         category: "뷰티 / 보습",
         priceRange: "10k_30k",
+        priceNumeric: 28000,
         priceDisplay: "약 28,000원",
         icon: "💛",
         badge: "보습의 원조",
@@ -1890,8 +2331,11 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["season", "birthday", "thanks", "casual"],
+        seasons: ["between_seasons", "winter"],
+        relationships: ["friend", "colleague", "family", "acquaintance"],
+        diversityGroup: "lip_hand_duo",
         mbtiTraits: { E: 4, I: 5, S: 6, N: 3, T: 4, F: 6, J: 6, P: 3 },
-        baseReason: "수년째 선물 랭킹 부동의 최상위권을 지키는 검증된 클래식! 파우치 필수품인 립밤과 핸드크림의 완벽한 듀오 구성으로 칭찬받는 선물이에요.",
+        baseReason: "수년째 선물 랭킹 부동의 최상위권을 지키는 검증된 클래식! 파우치 필수품인 립밤과 핸드크림의 완벽한 듀오 구성으로 환절기 보습을 완벽히 챙겨줘요.",
         tags: ["#록시땅클래식", "#호불호제로", "#극강의보습"]
       },
       {
@@ -1899,13 +2343,17 @@
         name: "러쉬(LUSH) 배쓰밤 & 버블바 릴렉싱 기프트 세트",
         category: "바디 / 스파",
         priceRange: "10k_30k",
+        priceNumeric: 29500,
         priceDisplay: "약 29,500원",
         icon: "🛁",
         badge: "힐링 뷰티 1위",
         kakaotag: "향기폭발",
         targetGender: ["female", "any"],
-        targetAge: ["10s", "20s_early", "20s_late"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["birthday", "anniversary", "thanks"],
+        seasons: ["all", "spring", "winter"],
+        relationships: ["partner", "friend"],
+        diversityGroup: "bath_spa",
         mbtiTraits: { E: 5, I: 5, S: 2, N: 6, T: 2, F: 7, P: 6, J: 3 },
         baseReason: "풍성한 거품과 영롱한 컬러, 욕실을 가득 채우는 에센셜 오일의 향기로 하루의 피로를 싹 씻어내 주는 나만을 위한 작은 스파 선물이에요.",
         tags: ["#러쉬입욕제", "#기분전환끝판왕", "#로맨틱무드"]
@@ -1915,6 +2363,7 @@
         name: "달콤 수제 마카롱 10구 & 프리미엄 구움과자 박스",
         category: "푸드 / 디저트",
         priceRange: "10k_30k",
+        priceNumeric: 26000,
         priceDisplay: "약 26,000원",
         icon: "🧁",
         badge: "파티 & 축하 베스트",
@@ -1922,8 +2371,11 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late"],
         occasions: ["birthday", "anniversary", "thanks", "graduation_job"],
+        seasons: ["all", "spring"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "dessert",
         mbtiTraits: { E: 6, I: 4, S: 4, N: 4, T: 3, F: 6, P: 5, J: 4 },
-        baseReason: "알록달록 예쁜 비주얼과 쫀득한 식감으로 열어보는 순간 탄성이 나오는 디저트! 특별한 날의 달콤함을 더해주는 센스 있는 축하 선물입니다.",
+        baseReason: "알록달록 화사한 비주얼과 쫀득한 식감으로 열어보는 순간 탄성이 나오는 디저트! 특별한 날의 달콤함을 더해주는 센스 있는 축하 선물입니다.",
         tags: ["#쫀득마카롱", "#비주얼천재", "#축하선물"]
       },
       {
@@ -1931,47 +2383,219 @@
         name: "모던 미니멀 천연 소가죽 카드지갑 & 키링 세트",
         category: "패션 / 소품",
         priceRange: "10k_30k",
+        priceNumeric: 29000,
         priceDisplay: "약 29,000원",
         icon: "💳",
         badge: "새출발 응원템",
         kakaotag: "슬림지갑",
         targetGender: ["male", "any"],
-        targetAge: ["20s_early", "20s_late"],
+        targetAge: ["20s_early", "20s_late", "30s"],
         occasions: ["graduation_job", "birthday", "casual"],
+        seasons: ["all"],
+        relationships: ["friend", "partner", "family", "colleague"],
+        diversityGroup: "wallet_card",
         mbtiTraits: { E: 3, I: 6, S: 6, N: 3, T: 6, F: 3, J: 6, P: 3 },
         baseReason: "주머니에 쏙 들어가는 슬림한 두께와 부드러운 가죽의 감촉! 꼭 필요한 카드만 챙겨 다니는 현대인에게 유용하고 깔끔한 매일의 짝꿍이 됩니다.",
         tags: ["#슬림카드지갑", "#천연소가죽", "#새출발선물"]
       },
+      {
+        id: "g_m11",
+        name: "코코도르(COCODOR) 프리저브드 플라워 리드 디퓨저 200ml 세트",
+        category: "리빙 / 프래그런스",
+        priceRange: "10k_30k",
+        priceNumeric: 19800,
+        priceDisplay: "약 19,800원",
+        icon: "🌷",
+        badge: "봄꽃 인테리어 1위",
+        kakaotag: "화사한향기",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "birthday", "thanks"],
+        seasons: ["spring"],
+        relationships: ["friend", "family", "partner", "colleague", "acquaintance"],
+        diversityGroup: "diffuser",
+        mbtiTraits: { E: 4, I: 6, S: 4, N: 6, T: 3, F: 7, J: 5, P: 4 },
+        baseReason: "시들지 않는 생화 프리저브드 플라워와 은은한 봄 꽃향기가 조화를 이뤄 공간 전체를 화사하게 채워주는 디퓨저 세트예요.",
+        tags: ["#꽃향기디퓨저", "#프리저브드플라워", "#봄감성소품"]
+      },
+      {
+        id: "g_m12",
+        name: "방수 깅엄체크 피크닉 매트 & 캔버스 보냉 런치백 세트",
+        category: "리빙 / 피크닉",
+        priceRange: "10k_30k",
+        priceNumeric: 24900,
+        priceDisplay: "약 24,900원",
+        icon: "🧺",
+        badge: "봄나들이 베스트",
+        kakaotag: "피크닉필수템",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "birthday", "casual", "anniversary"],
+        seasons: ["spring"],
+        relationships: ["friend", "partner", "family"],
+        diversityGroup: "picnic",
+        mbtiTraits: { E: 6, I: 4, S: 5, N: 5, T: 4, F: 6, J: 4, P: 6 },
+        baseReason: "산뜻한 체크 패턴 피크닉 매트와 음식을 시원하게 담아갈 수 있는 보냉백 구성! 꽃구경이나 주말 공원 피크닉을 떠날 때마다 기분 좋게 쓰기 좋아요.",
+        tags: ["#피크닉매트", "#보냉백세트", "#봄나들이"]
+      },
+      {
+        id: "g_m13",
+        name: "클린(CLEAN) 쿨 코튼 / 웜 코튼 오 드 퍼퓸 30ml",
+        category: "뷰티 / 향수",
+        priceRange: "10k_30k",
+        priceNumeric: 29000,
+        priceDisplay: "약 29,000원",
+        icon: "💧",
+        badge: "청량 비누향 1위",
+        kakaotag: "여름인기향수",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "birthday", "casual", "anniversary"],
+        seasons: ["summer"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "perfume_mist",
+        mbtiTraits: { E: 5, I: 5, S: 4, N: 5, T: 4, F: 6, J: 5, P: 5 },
+        baseReason: "방금 샤워하고 나온 듯 깨끗하고 시원한 아쿠아·코튼 향기가 더운 여름에도 답답함 없이 청량한 인상을 남겨주는 데일리 향수입니다.",
+        tags: ["#청량한향수", "#클린쿨코튼", "#비누향추천"]
+      },
+      {
+        id: "g_m14",
+        name: "저소음 미니 핸디 선풍기 & 대나무 린넨 쿨링 타올 세트",
+        category: "리빙 / 여름소품",
+        priceRange: "10k_30k",
+        priceNumeric: 25900,
+        priceDisplay: "약 25,900원",
+        icon: "🌬️",
+        badge: "여름 실용 1위",
+        kakaotag: "시원한여름템",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "casual", "birthday"],
+        seasons: ["summer"],
+        relationships: ["friend", "colleague", "family", "acquaintance"],
+        diversityGroup: "cooling_item",
+        mbtiTraits: { E: 5, I: 4, S: 7, N: 3, T: 6, F: 4, J: 6, P: 4 },
+        baseReason: "조용하면서도 바람이 시원한 휴대용 선풍기와 통기성 좋은 린넨 쿨링 타올을 함께 담았어요. 한여름 야외 활동과 출퇴근길을 쾌적하게 지켜줍니다.",
+        tags: ["#핸디선풍기", "#린넨소품", "#여름필수품"]
+      },
+      {
+        id: "g_m15",
+        name: "충전식 우드 무드 북라이트 & 몰스킨 클래식 하드커버 노트",
+        category: "문구 / 독서용품",
+        priceRange: "10k_30k",
+        priceNumeric: 27000,
+        priceDisplay: "약 27,000원",
+        icon: "📚",
+        badge: "가을 서재 감성",
+        kakaotag: "독서기록세트",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "graduation_job", "thanks"],
+        seasons: ["autumn"],
+        relationships: ["friend", "partner", "colleague", "acquaintance"],
+        diversityGroup: "reading_item",
+        mbtiTraits: { E: 2, I: 7, S: 4, N: 7, T: 5, F: 5, J: 6, P: 4 },
+        baseReason: "책에 끼워 은은한 빛을 비추는 북라이트와 묵직한 기록감을 선사하는 몰스킨 노트의 조합! 고요한 가을밤 독서와 사색의 시간을 깊어지게 해줍니다.",
+        tags: ["#가을독서용품", "#감성문구류", "#몰스킨노트"]
+      },
+      {
+        id: "g_m16",
+        name: "포근한 양털 플리스 무릎담요 & 시나몬 애플티 티백 세트",
+        category: "리빙 / 겨울감성",
+        priceRange: "10k_30k",
+        priceNumeric: 26500,
+        priceDisplay: "약 26,500원",
+        icon: "🧣",
+        badge: "겨울 포근템 1위",
+        kakaotag: "따뜻한휴식",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "thanks", "housewarming", "casual"],
+        seasons: ["winter"],
+        relationships: ["friend", "partner", "family", "colleague"],
+        diversityGroup: "blanket",
+        mbtiTraits: { E: 3, I: 7, S: 5, N: 5, T: 3, F: 7, J: 5, P: 5 },
+        baseReason: "보들보들한 촉감의 포근한 담요와 달콤하고 스파이시한 겨울 차를 함께 즐길 수 있는 선물이에요. 추운 날 소파나 책상에서 온기를 느끼기에 최고입니다.",
+        tags: ["#포근한담요", "#겨울티타임", "#보온감성"]
+      },
+      {
+        id: "g_m17",
+        name: "오아 USB 충전식 에그 손난로 & 앙고라 터치 장갑 세트",
+        category: "패션 / 보온용품",
+        priceRange: "10k_30k",
+        priceNumeric: 24000,
+        priceDisplay: "약 24,000원",
+        icon: "🧤",
+        badge: "겨울 출퇴근 필수",
+        kakaotag: "온기충전",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "birthday", "casual"],
+        seasons: ["winter"],
+        relationships: ["friend", "partner", "family", "colleague"],
+        diversityGroup: "hand_warmer",
+        mbtiTraits: { E: 4, I: 5, S: 6, N: 4, T: 5, F: 6, J: 6, P: 4 },
+        baseReason: "한 손에 쏙 들어오는 고속 발열 충전식 손난로와 스마트폰 터치가 가능한 따뜻한 장갑 세트! 매서운 겨울 바람 속에서도 손을 따뜻하게 지켜줍니다.",
+        tags: ["#충전식손난로", "#겨울보온용품", "#따뜻한마음"]
+      },
+      {
+        id: "g_m18",
+        name: "정관장 활기력 10병입 / 전통 도라지정과 명절 기프트 박스",
+        category: "건강 / 명절선물",
+        priceRange: "10k_30k",
+        priceNumeric: 29000,
+        priceDisplay: "약 29,000원",
+        icon: "🏮",
+        badge: "명절 감사 1위",
+        kakaotag: "정성한가득",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_late", "30s", "40s_plus"],
+        occasions: ["season", "thanks", "birthday"],
+        seasons: ["holiday"],
+        relationships: ["family", "acquaintance", "colleague"],
+        diversityGroup: "holiday_food",
+        mbtiTraits: { E: 4, I: 4, S: 7, N: 3, T: 5, F: 6, J: 7, P: 3 },
+        baseReason: "고급스러운 보자기·박스 패키지에 건강과 품격을 담아 명절 인사용으로 가장 사랑받는 실속형 건강 기프트입니다.",
+        tags: ["#명절선물", "#활력충전", "#부모님선물"]
+      },
 
-      /* 3. 3 ~ 5만 원대 (30k_50k) */
+      /* 3. 3 ~ 5만 원대 (30k_50k: 30,000원 ~ 50,000원) */
       {
         id: "g_p1",
         name: "이솝(Aesop) 레저렉션 아로마틱 핸드 밤 75ml",
         category: "뷰티 / 바디",
         priceRange: "30k_50k",
+        priceNumeric: 39000,
         priceDisplay: "약 39,000원",
         icon: "🌿",
         badge: "워너비 기프트 1위",
         kakaotag: "받고싶은선물1위",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
-        occasions: ["birthday", "anniversary", "housewarming", "graduation_job", "thanks"],
+        occasions: ["birthday", "anniversary", "housewarming", "graduation_job", "thanks", "season"],
+        seasons: ["between_seasons", "autumn", "winter"],
+        relationships: ["friend", "partner", "colleague", "acquaintance"],
+        diversityGroup: "hand_care",
         mbtiTraits: { E: 4, I: 6, S: 4, N: 6, T: 4, F: 6, J: 5, P: 5 },
         baseReason: "은은한 시트러스와 우디 아로마의 독보적인 힐링 향! 책상이나 가방에 올려두는 것만으로도 품격을 더해주는 모두의 위시리스트 1위 아이템입니다.",
-        tags: ["#이솝핸드크림", "#시트러스우디", "#럭셔리데일리"]
+        tags: ["#이솝핸드크림", "#시트러스우디", "#환절기보습"]
       },
       {
         id: "g_p2",
         name: "이솝(Aesop) 레저렉션 아로마틱 핸드 워시 500ml",
         category: "리빙 / 바디케어",
         priceRange: "30k_50k",
+        priceNumeric: 49000,
         priceDisplay: "약 49,000원",
         icon: "🧴",
         badge: "집들이 끝판왕",
         kakaotag: "호텔욕실무드",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
-        occasions: ["housewarming", "birthday", "anniversary", "thanks"],
+        occasions: ["housewarming", "birthday", "anniversary", "thanks", "season"],
+        seasons: ["between_seasons", "all"],
+        relationships: ["friend", "family", "acquaintance", "colleague"],
+        diversityGroup: "hand_wash",
         mbtiTraits: { E: 4, I: 6, S: 5, N: 5, T: 4, F: 6, J: 6, P: 4 },
         baseReason: "세련된 브라운 보틀이 욕실을 5성급 호텔 분위기로 바꿔줘요. 손을 씻을 때마다 퍼지는 아로마 향기로 매일 감탄하게 되는 집들이 최고의 선물!",
         tags: ["#호텔핸드워시", "#이솝시그니처", "#집들이치트키"]
@@ -1981,6 +2605,7 @@
         name: "딥티크(Diptyque) 센티드 퍼퓸 솝 & 세라믹 디쉬 세트",
         category: "뷰티 / 향수",
         priceRange: "30k_50k",
+        priceNumeric: 42000,
         priceDisplay: "약 42,000원",
         icon: "🧼",
         badge: "프랑스 니치 퍼퓸",
@@ -1988,6 +2613,9 @@
         targetGender: ["female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
         occasions: ["birthday", "anniversary", "housewarming"],
+        seasons: ["spring", "all"],
+        relationships: ["partner", "friend", "acquaintance"],
+        diversityGroup: "soap_set",
         mbtiTraits: { E: 4, I: 6, S: 2, N: 7, T: 2, F: 7, J: 4, P: 5 },
         baseReason: "비누 하나만 놓아두어도 욕실 전체가 고급스러운 향기로 물들어요. 프랑스 프리미엄 니치 향수의 우아함을 부담 없이 선물할 수 있습니다.",
         tags: ["#딥티크솝", "#니치향수감성", "#욕실오브제"]
@@ -1997,29 +2625,37 @@
         name: "조말론 런던 미니 트래블 캔들 60g (잉글리쉬 페어 / 우드세이지)",
         category: "리빙 / 향기",
         priceRange: "30k_50k",
+        priceNumeric: 48000,
         priceDisplay: "약 48,000원",
         icon: "🕯️",
         badge: "영국 럭셔리 감성",
         kakaotag: "로맨틱캔들",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["anniversary", "birthday", "housewarming"],
+        occasions: ["anniversary", "birthday", "housewarming", "season"],
+        seasons: ["autumn", "winter"],
+        relationships: ["partner", "friend", "acquaintance"],
+        diversityGroup: "candle_warmer",
         mbtiTraits: { E: 4, I: 6, S: 3, N: 6, T: 3, F: 6, J: 4, P: 5 },
         baseReason: "조말론의 시그니처 크림 박스에 블랙 리본을 둘러 건네는 순간 기분 좋은 설렘을 선사해요. 아늑한 공간을 품격 있게 채워주는 캔들입니다.",
-        tags: ["#조말론캔들", "#블랙리본포장", "#특별한날"]
+        tags: ["#조말론캔들", "#블랙리본포장", "#가을겨울무드"]
       },
       {
         id: "g_p5",
         name: "오덴세(Odense) 아틀리에 머그 2P & 원목 플레이트 세트",
         category: "리빙 / 테이블웨어",
         priceRange: "30k_50k",
+        priceNumeric: 45000,
         priceDisplay: "약 45,000원",
         icon: "🍽️",
         badge: "신혼·집들이 1위",
         kakaotag: "감성브런치",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
-        occasions: ["housewarming", "anniversary", "thanks"],
+        occasions: ["housewarming", "anniversary", "thanks", "season"],
+        seasons: ["autumn", "winter", "holiday"],
+        relationships: ["family", "friend", "partner", "acquaintance"],
+        diversityGroup: "tableware",
         mbtiTraits: { E: 4, I: 6, S: 5, N: 4, T: 3, F: 6, J: 6, P: 4 },
         baseReason: "따뜻한 북유럽 감성의 색감과 자연스러운 도자기 텍스처로 브런치 테이블을 빛내줘요. 오래도록 튼튼하게 쓸 수 있는 고급스러운 식기 세트입니다.",
         tags: ["#오덴세", "#테이블웨어", "#감성플레이팅"]
@@ -2029,22 +2665,27 @@
         name: "라미(LAMY) 사파리 만년필 + 잉크 컨버터 + 각인 세트",
         category: "문구 / 오피스",
         priceRange: "30k_50k",
+        priceNumeric: 38000,
         priceDisplay: "약 38,000원",
         icon: "✒️",
         badge: "취업·합격 축하 1위",
         kakaotag: "각인서비스",
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
-        occasions: ["graduation_job", "birthday", "thanks"],
+        occasions: ["graduation_job", "birthday", "thanks", "season"],
+        seasons: ["autumn", "all"],
+        relationships: ["friend", "colleague", "acquaintance", "partner"],
+        diversityGroup: "stationery",
         mbtiTraits: { E: 2, I: 7, S: 5, N: 5, T: 6, F: 4, J: 7, P: 3 },
         baseReason: "독일의 정교한 기술력과 인체공학적 디자인으로 글을 쓸 때마다 손끝에 전해지는 사각거림이 특별해요. 받는 사람의 이름을 새겨 평생 기억될 선물을 만들어보세요.",
-        tags: ["#라미만년필", "#나만의각인", "#취업선물끝판왕"]
+        tags: ["#라미만년필", "#가을감성문구", "#취업선물끝판왕"]
       },
       {
         id: "g_p7",
         name: "오쏘몰 이뮨 멀티비타민 & 미네랄 (7일분 스페셜 에디션)",
         category: "건강 / 웰니스",
         priceRange: "30k_50k",
+        priceNumeric: 38000,
         priceDisplay: "약 38,000원",
         icon: "💊",
         badge: "비타민계의 에르메스",
@@ -2052,74 +2693,233 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["thanks", "graduation_job", "season", "birthday"],
+        seasons: ["between_seasons", "holiday"],
+        relationships: ["family", "colleague", "acquaintance", "friend"],
+        diversityGroup: "wellness",
         mbtiTraits: { E: 4, I: 4, S: 7, N: 3, T: 6, F: 4, J: 6, P: 3 },
-        baseReason: "바쁜 현대인에게 강력한 활력을 불어넣어 주는 프리미엄 비타민! 고급스러운 원통형 패키지와 확실한 피로회복 효과로 정성을 전하기에 완벽합니다.",
-        tags: ["#오쏘몰이뮨", "#독일프리미엄", "#피로회복"]
+        baseReason: "바쁜 현대인에게 강력한 활력을 불어넣어 주는 프리미엄 비타민! 고급스러운 패키지와 확실한 피로회복 효과로 계절이 바뀔 때 정성을 전하기에 완벽합니다.",
+        tags: ["#오쏘몰이뮨", "#환절기면역", "#피로회복"]
       },
       {
         id: "g_p8",
         name: "샤넬(CHANEL) 루쥬 코코 밤 / 립앤치크 틴트",
         category: "뷰티 / 메이크업",
         priceRange: "30k_50k",
+        priceNumeric: 48000,
         priceDisplay: "약 48,000원",
         icon: "💄",
         badge: "스몰 럭셔리 1위",
         kakaotag: "샤넬화이트박스",
         targetGender: ["female"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "anniversary", "casual"],
+        occasions: ["birthday", "anniversary", "casual", "season"],
+        seasons: ["spring", "between_seasons"],
+        relationships: ["partner", "friend"],
+        diversityGroup: "lip_care",
         mbtiTraits: { E: 6, I: 4, S: 3, N: 6, T: 2, F: 7, P: 5, J: 4 },
-        baseReason: "샤넬 로고가 새겨진 화이트 패키지와 쇼핑백을 열 때의 두근거림! 촉촉한 입술 케어와 은은한 발색으로 매일 꺼내 쓸 때마다 기분 좋은 미소를 안겨줘요.",
-        tags: ["#샤넬립밤", "#스몰럭셔리", "#생일선물추천"]
+        baseReason: "샤넬 로고가 새겨진 화이트 패키지와 쇼핑백을 열 때의 두근거림! 촉촉한 입술 케어와 화사한 발색으로 매일 꺼내 쓸 때마다 기분 좋은 미소를 안겨줘요.",
+        tags: ["#샤넬립밤", "#스몰럭셔리", "#화사한포인트"]
       },
       {
         id: "g_p9",
         name: "랩시리즈(LAB SERIES) 워터 로션 + 올인원 프로 세트",
         category: "뷰티 / 남성케어",
         priceRange: "30k_50k",
+        priceNumeric: 49000,
         priceDisplay: "약 49,000원",
         icon: "🧴",
         badge: "남성 스킨케어 1등",
         kakaotag: "피부치트키",
         targetGender: ["male"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
-        occasions: ["birthday", "graduation_job", "anniversary", "thanks"],
+        occasions: ["birthday", "graduation_job", "anniversary", "thanks", "season"],
+        seasons: ["between_seasons", "summer"],
+        relationships: ["partner", "friend", "family", "colleague"],
+        diversityGroup: "mens_skincare",
         mbtiTraits: { E: 4, I: 5, S: 6, N: 3, T: 6, F: 3, J: 6, P: 4 },
-        baseReason: "끈적임 없이 산뜻하게 유수분 밸런스를 맞춰주는 남성 화장품계의 절대 강자! 복잡한 것 싫어하는 남성분들에게 최고의 실용 선물이 됩니다.",
-        tags: ["#랩시리즈", "#남성올인원", "#실패없는남자선물"]
+        baseReason: "끈적임 없이 산뜻하게 유수분 밸런스를 맞춰주는 남성 화장품계의 절대 강자! 계절 변화에 예민해진 피부를 간편하게 관리해 줍니다.",
+        tags: ["#랩시리즈", "#남성올인원", "#산뜻한보습"]
       },
       {
         id: "g_p10",
         name: "프리미엄 칠레산 리저브 와인 & 크리스탈 와인잔 2P 기프트 박스",
         category: "푸드 / 주류",
         priceRange: "30k_50k",
+        priceNumeric: 48000,
         priceDisplay: "약 48,000원",
         icon: "🍷",
         badge: "로맨틱 & 파티 베스트",
         kakaotag: "분위기메이커",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
-        occasions: ["anniversary", "housewarming", "birthday"],
+        occasions: ["anniversary", "housewarming", "birthday", "season"],
+        seasons: ["winter", "autumn", "holiday"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "wine_dining",
         mbtiTraits: { E: 6, I: 4, S: 4, N: 5, T: 3, F: 6, P: 5, J: 4 },
-        baseReason: "특별한 날의 저녁을 근사하게 물들여줄 와인과 영롱한 크리스탈 잔 세트! 둘만의 기념일이나 집들이 파티에 분위기를 한층 돋워줍니다.",
+        baseReason: "특별한 날의 저녁을 근사하게 물들여줄 와인과 영롱한 크리스탈 잔 세트! 둘만의 기념일이나 홈파티에 따뜻한 분위기를 한층 돋워줍니다.",
         tags: ["#홈파티와인", "#크리스탈글라스", "#로맨틱무드"]
       },
+      {
+        id: "g_p11",
+        name: "르플랑 플로럴 화병 리드 디퓨저 & 봄 생화 무드 카드 세트",
+        category: "리빙 / 프래그런스",
+        priceRange: "30k_50k",
+        priceNumeric: 39000,
+        priceDisplay: "약 39,000원",
+        icon: "💐",
+        badge: "봄 감성 1위",
+        kakaotag: "플라워무드",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "birthday", "anniversary", "thanks"],
+        seasons: ["spring"],
+        relationships: ["partner", "friend", "family", "acquaintance"],
+        diversityGroup: "diffuser",
+        mbtiTraits: { E: 4, I: 6, S: 4, N: 6, T: 3, F: 7, J: 5, P: 5 },
+        baseReason: "도자기 화병 모양 보틀에 은은한 프리지아·작약 꽃향기를 담은 봄 맞춤 디퓨저! 인테리어 소품으로도 화사한 존재감을 발휘합니다.",
+        tags: ["#꽃향기디퓨저", "#봄인테리어", "#화사한감성"]
+      },
+      {
+        id: "g_p12",
+        name: "스탠리(STANLEY) 퀜처 H2.0 플로우스테이트 텀블러 (파스텔 에디션)",
+        category: "리빙 / 피크닉",
+        priceRange: "30k_50k",
+        priceNumeric: 45000,
+        priceDisplay: "약 45,000원",
+        icon: "🥤",
+        badge: "피크닉·캠핑 대란템",
+        kakaotag: "보냉력최강",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s"],
+        occasions: ["season", "birthday", "graduation_job", "casual"],
+        seasons: ["spring", "summer"],
+        relationships: ["friend", "partner", "colleague"],
+        diversityGroup: "picnic",
+        mbtiTraits: { E: 6, I: 4, S: 6, N: 4, T: 5, F: 5, J: 5, P: 5 },
+        baseReason: "화사한 파스텔 컬러와 대용량 보냉·보온 기능으로 봄 피크닉부터 여름 야외 활동, 사무실 데스크까지 사계절 내내 사랑받는 인기 텀블러입니다.",
+        tags: ["#스탠리텀블러", "#피크닉필수템", "#파스텔컬러"]
+      },
+      {
+        id: "g_p13",
+        name: "록시땅(L'OCCITANE) 버베나 오 드 뚜왈렛 30ml / 시트러스 기프트",
+        category: "뷰티 / 향수",
+        priceRange: "30k_50k",
+        priceNumeric: 47000,
+        priceDisplay: "약 47,000원",
+        icon: "🌿",
+        badge: "여름 시그니처 향",
+        kakaotag: "청량에너지",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary", "thanks"],
+        seasons: ["summer"],
+        relationships: ["friend", "partner", "colleague", "acquaintance"],
+        diversityGroup: "perfume_mist",
+        mbtiTraits: { E: 6, I: 4, S: 4, N: 6, T: 4, F: 6, J: 5, P: 5 },
+        baseReason: "갓 딴 레몬 버베나 잎을 비빈 듯 상쾌하고 싱그러운 그린 시트러스 향! 더운 여름날 기분을 환기시켜 주는 대표 청량 향수입니다.",
+        tags: ["#록시땅버베나", "#청량한향수", "#여름시트러스"]
+      },
+      {
+        id: "g_p14",
+        name: "풍기인견 100% 여름용 쿨링 시어서커 블랭킷 & 린넨 파우치",
+        category: "리빙 / 여름침구",
+        priceRange: "30k_50k",
+        priceNumeric: 44000,
+        priceDisplay: "약 44,000원",
+        icon: "🌊",
+        badge: "열대야 꿀잠템",
+        kakaotag: "시원한촉감",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "thanks", "birthday"],
+        seasons: ["summer"],
+        relationships: ["family", "friend", "partner", "acquaintance"],
+        diversityGroup: "cooling_item",
+        mbtiTraits: { E: 3, I: 6, S: 7, N: 3, T: 5, F: 6, J: 6, P: 4 },
+        baseReason: "피부에 닿자마자 시원함이 느껴지는 국내산 인견과 가벼운 시어서커 소재! 에어컨 아래에서도 포근하고 쾌적하게 덮기 좋은 여름 생활용품입니다.",
+        tags: ["#풍기인견", "#시원한소재", "#여름생활용품"]
+      },
+      {
+        id: "g_p15",
+        name: "원목 접이식 독서대 & 브라스 책갈피·트레이 세트",
+        category: "리빙 / 독서용품",
+        priceRange: "30k_50k",
+        priceNumeric: 43000,
+        priceDisplay: "약 43,000원",
+        icon: "📖",
+        badge: "서재·독서 베스트",
+        kakaotag: "지적인무드",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "graduation_job", "birthday", "housewarming"],
+        seasons: ["autumn"],
+        relationships: ["friend", "partner", "family", "acquaintance"],
+        diversityGroup: "reading_item",
+        mbtiTraits: { E: 2, I: 7, S: 5, N: 6, T: 6, F: 5, J: 6, P: 3 },
+        baseReason: "고급 월넛 원목의 따뜻한 색감이 책상 분위기를 차분하게 잡아주며 목과 허리가 편안한 독서 자세를 도와줘요. 가을 독서 취미를 위한 맞춤 선물입니다.",
+        tags: ["#원목독서대", "#가을독서용품", "#따뜻한소품"]
+      },
+      {
+        id: "g_p16",
+        name: "포트넘 앤 메이슨 로얄 블렌드 티 & 캐시미어 터치 울 블랭킷 세트",
+        category: "리빙 / 겨울티·담요",
+        priceRange: "30k_50k",
+        priceNumeric: 46000,
+        priceDisplay: "약 46,000원",
+        icon: "🫖",
+        badge: "겨울 감성 끝판왕",
+        kakaotag: "포근한겨울",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "thanks", "housewarming", "anniversary"],
+        seasons: ["winter"],
+        relationships: ["friend", "partner", "family", "acquaintance"],
+        diversityGroup: "blanket",
+        mbtiTraits: { E: 3, I: 7, S: 5, N: 6, T: 4, F: 7, J: 5, P: 4 },
+        baseReason: "영국 왕실 홍차의 깊고 부드러운 풍미와 몸을 포근하게 감싸는 보드라운 담요를 함께 담은 겨울 시그니처 세트예요. 추운 계절 집에서의 시간을 영화처럼 만들어줍니다.",
+        tags: ["#따뜻한차", "#겨울담요", "#포근한선물"]
+      },
+      {
+        id: "g_p17",
+        name: "정관장 홍삼정 에브리타임 밸런스 20포 명절 감사 세트",
+        category: "건강 / 명절선물",
+        priceRange: "30k_50k",
+        priceNumeric: 48000,
+        priceDisplay: "약 48,000원",
+        icon: "🏮",
+        badge: "명절 스테디셀러",
+        kakaotag: "감사선물1위",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["30s", "40s_plus"],
+        occasions: ["season", "thanks", "birthday"],
+        seasons: ["holiday"],
+        relationships: ["family", "acquaintance", "colleague"],
+        diversityGroup: "holiday_food",
+        mbtiTraits: { E: 4, I: 5, S: 7, N: 3, T: 5, F: 6, J: 7, P: 3 },
+        baseReason: "부드러운 맛으로 남녀노소 누구나 하루 한 포씩 간편하게 건강을 챙길 수 있는 명절 대표 효도·감사 선물입니다.",
+        tags: ["#홍삼정에브리타임", "#명절감사", "#건강기프트"]
+      },
 
-      /* 4. 5 ~ 10만 원대 (50k_100k) */
+      /* 4. 5 ~ 10만 원대 (50k_100k: 50,000원 ~ 100,000원) */
       {
         id: "g_h1",
         name: "조말론 런던 코롱 30ml (블랙베리 앤 베이 / 잉글리쉬 페어)",
         category: "뷰티 / 향수",
         priceRange: "50k_100k",
+        priceNumeric: 98000,
         priceDisplay: "약 98,000원",
         icon: "✨",
         badge: "국민 니치 향수",
         kakaotag: "고급향기",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "anniversary", "graduation_job"],
+        occasions: ["birthday", "anniversary", "graduation_job", "season"],
+        seasons: ["spring", "autumn"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "perfume_mist",
         mbtiTraits: { E: 5, I: 5, S: 3, N: 6, T: 3, F: 6, J: 5, P: 5 },
-        baseReason: "상큼하고 세련된 시그니처 향으로 사계절 내내 사랑받는 명품 향수! 특별한 기념일과 생일에 품격을 담아 선물하기에 완벽한 명작입니다.",
+        baseReason: "상큼하고 세련된 시그니처 향으로 사랑받는 명품 향수! 특별한 기념일과 생일에 품격을 담아 선물하기에 완벽한 명작입니다.",
         tags: ["#조말론향수", "#블랙베리앤베이", "#명품향수"]
       },
       {
@@ -2127,47 +2927,59 @@
         name: "르라보(LE LABO) 히노키 핸드 앤 바디 로션 250ml",
         category: "바디 / 퍼퓸",
         priceRange: "50k_100k",
+        priceNumeric: 65000,
         priceDisplay: "약 65,000원",
         icon: "🌲",
         badge: "고급 스파 무드",
         kakaotag: "우디향성지",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "housewarming", "anniversary"],
+        occasions: ["birthday", "housewarming", "anniversary", "season"],
+        seasons: ["between_seasons", "autumn", "winter"],
+        relationships: ["partner", "friend", "acquaintance"],
+        diversityGroup: "body_lotion",
         mbtiTraits: { E: 3, I: 7, S: 2, N: 7, T: 4, F: 6, J: 4, P: 6 },
-        baseReason: "일본 고야산의 편백나무 숲에 둘러싸인 듯한 깊고 그윽한 히노키 향기! 감성적인 휴식과 고급스러운 인테리어를 동시에 만족시킵니다.",
-        tags: ["#르라보히노키", "#우디인생향", "#감성바디로션"]
+        baseReason: "편백나무 숲에 둘러싸인 듯한 깊고 그윽한 히노키 향기와 깊은 보습감! 건조한 환절기와 겨울철 감성적인 휴식을 완성해 줍니다.",
+        tags: ["#르라보히노키", "#우디보습", "#감성바디로션"]
       },
       {
         id: "g_h3",
         name: "마샬(Marshall) 윌렌(Willen) 미니 포터블 블루투스 스피커",
         category: "디지털 / 음향",
         priceRange: "50k_100k",
+        priceNumeric: 99000,
         priceDisplay: "약 99,000원",
         icon: "📻",
         badge: "음향 & 디자인 올킬",
         kakaotag: "캠핑·인테리어",
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "housewarming", "graduation_job"],
+        occasions: ["birthday", "housewarming", "graduation_job", "season"],
+        seasons: ["spring", "summer", "all"],
+        relationships: ["friend", "partner", "family"],
+        diversityGroup: "speaker",
         mbtiTraits: { E: 6, I: 4, S: 3, N: 7, T: 4, F: 5, P: 6, J: 3 },
-        baseReason: "마샬 특유의 빈티지 레트로 감성과 강력한 사운드를 손바닥만 한 크기에 담았어요! 방 인테리어 오브제로도, 야외 캠핑 피크닉에서도 빛을 발합니다.",
-        tags: ["#마샬스피커", "#레트로감성", "#인테리어오브제"]
+        baseReason: "마샬 특유의 빈티지 레트로 감성과 방수 기능까지 갖춘 포터블 스피커! 방 인테리어 오브제로도, 봄·여름 야외 피크닉에서도 빛을 발합니다.",
+        tags: ["#마샬스피커", "#피크닉음향", "#인테리어오브제"]
       },
       {
         id: "g_h4",
         name: "네스프레소 에센자 미니 C30 캡슐 커피머신",
         category: "가전 / 홈카페",
         priceRange: "50k_100k",
+        priceNumeric: 99000,
         priceDisplay: "약 99,000원",
         icon: "☕",
         badge: "홈카페 필수템 1위",
-        kakaotag: "자취방삶의질상승",
+        kakaotag: "삶의질상승",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["housewarming", "graduation_job", "birthday", "anniversary"],
+        seasons: ["winter", "autumn", "all"],
+        relationships: ["family", "partner", "friend", "colleague"],
+        diversityGroup: "coffee_machine",
         mbtiTraits: { E: 4, I: 6, S: 6, N: 4, T: 6, F: 4, J: 6, P: 4 },
-        baseReason: "버튼 한 번으로 집에서도 카페 수준의 크레마 풍부한 에스프레소를 즐겨요! 콤팩트한 사이즈로 좁은 주방이나 원룸에도 쏙 들어가는 삶의 질 수직 상승템입니다.",
+        baseReason: "버튼 한 번으로 집에서도 따뜻한 카페 수준의 에스프레소를 즐겨요! 콤팩트한 사이즈로 어느 주방에나 쏙 들어가는 삶의 질 수직 상승템입니다.",
         tags: ["#네스프레소머신", "#홈카페입문", "#삶의질상승"]
       },
       {
@@ -2175,29 +2987,37 @@
         name: "로지텍 MX Master 3S 최고급 무선 인체공학 마우스",
         category: "디지털 / 오피스",
         priceRange: "50k_100k",
+        priceNumeric: 98000,
         priceDisplay: "약 98,000원",
         icon: "🖱️",
-        badge: "개발자·기획자 찬양",
+        badge: "직장인·기획자 찬양",
         kakaotag: "업무효율극대화",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["graduation_job", "birthday", "thanks"],
+        seasons: ["all"],
+        relationships: ["colleague", "partner", "friend", "family"],
+        diversityGroup: "tech_office",
         mbtiTraits: { E: 2, I: 6, S: 7, N: 3, T: 7, F: 2, J: 7, P: 2 },
-        baseReason: "손목의 편안함과 초고속 마그네틱 휠 스크롤로 업무 생산성을 300% 올려주는 명품 마우스! 컴퓨터를 오래 쓰는 직장인에게 찬사를 받는 실용성 최강 선물입니다.",
-        tags: ["#로지텍끝판왕", "#손목보호", "#신입사원장비"]
+        baseReason: "손목의 편안함과 초고속 마그네틱 휠 스크롤로 업무 생산성을 크게 올려주는 명품 마우스! 컴퓨터를 오래 쓰는 직장인에게 찬사를 받는 실용성 최강 선물입니다.",
+        tags: ["#로지텍끝판왕", "#손목보호", "#취업선물"]
       },
       {
         id: "g_h6",
         name: "메종 마르지엘라 레플리카 디퓨저 185ml (레이지 선데이 모닝)",
         category: "리빙 / 프래그런스",
         priceRange: "50k_100k",
+        priceNumeric: 89000,
         priceDisplay: "약 89,000원",
         icon: "🧴",
         badge: "호텔 침구 감성",
         kakaotag: "포근한코튼향",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["housewarming", "birthday", "anniversary"],
+        occasions: ["housewarming", "birthday", "anniversary", "season"],
+        seasons: ["spring", "between_seasons"],
+        relationships: ["partner", "friend", "acquaintance"],
+        diversityGroup: "diffuser",
         mbtiTraits: { E: 3, I: 7, S: 3, N: 6, T: 3, F: 6, J: 5, P: 5 },
         baseReason: "일요일 아침 햇살이 비치는 깨끗한 화이트 코튼 침구의 향기! 마르지엘라 특유의 감성 라벨이 방안의 무드를 한층 고급스럽게 업그레이드해 줍니다.",
         tags: ["#마르지엘라디퓨저", "#레이지선데이모닝", "#집들이감성"]
@@ -2207,15 +3027,19 @@
         name: "닥스(DAKS) DD로고 천연가죽 슬림 남성 반지갑",
         category: "패션 / 잡화",
         priceRange: "50k_100k",
+        priceNumeric: 85000,
         priceDisplay: "약 85,000원",
         icon: "👛",
         badge: "클래식 명품",
         kakaotag: "취업축하1등",
         targetGender: ["male"],
         targetAge: ["20s_late", "30s", "40s_plus"],
-        occasions: ["graduation_job", "birthday", "anniversary", "thanks"],
+        occasions: ["graduation_job", "birthday", "anniversary", "thanks", "season"],
+        seasons: ["holiday", "all"],
+        relationships: ["family", "partner", "colleague"],
+        diversityGroup: "wallet_card",
         mbtiTraits: { E: 3, I: 5, S: 7, N: 2, T: 6, F: 3, J: 7, P: 3 },
-        baseReason: "단단하고 스크래치에 강한 최고급 천연 가죽과 클래식한 DD 메탈 로고의 조화! 출퇴근길 비즈니스 룩에 품격을 더해주는 든든한 선물입니다.",
+        baseReason: "단단하고 스크래치에 강한 최고급 천연 가죽과 클래식한 DD 메탈 로고의 조화! 비즈니스 룩에 품격을 더해주는 든든한 선물입니다.",
         tags: ["#닥스지갑", "#천연가죽반지갑", "#비즈니스필수"]
       },
       {
@@ -2223,6 +3047,7 @@
         name: "오쏘몰 이뮨 멀티비타민 & 미네랄 30일분 프리미엄 박스",
         category: "건강 / 웰니스",
         priceRange: "50k_100k",
+        priceNumeric: 89000,
         priceDisplay: "약 89,000원",
         icon: "💊",
         badge: "한 달 활력 충전",
@@ -2230,17 +3055,161 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
         occasions: ["thanks", "season", "graduation_job", "birthday"],
+        seasons: ["between_seasons", "holiday"],
+        relationships: ["family", "acquaintance", "colleague"],
+        diversityGroup: "wellness",
         mbtiTraits: { E: 4, I: 4, S: 7, N: 2, T: 6, F: 4, J: 7, P: 3 },
-        baseReason: "한 달 동안 매일매일 건강과 활력을 챙겨주는 든든한 지원군! 부모님, 은사님, 고마운 분께 진심 어린 마음을 전하기에 이보다 좋은 보약은 없습니다.",
-        tags: ["#오쏘몰30일분", "#원기회복", "#건강선물1위"]
+        baseReason: "한 달 동안 매일 건강과 활력을 챙겨주는 든든한 지원군! 부모님, 은사님, 고마운 분께 명절이나 환절기에 진심 어린 마음을 전하기 좋습니다.",
+        tags: ["#오쏘몰30일분", "#원기회복", "#명절건강선물"]
+      },
+      {
+        id: "g_h9",
+        name: "산타마리아노벨라 프리지아 테라코타 포푸리 & 룸 스프레이",
+        category: "리빙 / 프래그런스",
+        priceRange: "50k_100k",
+        priceNumeric: 85000,
+        priceDisplay: "약 85,000원",
+        icon: "🌸",
+        badge: "봄 플라워 명품",
+        kakaotag: "프리지아향기",
+        targetGender: ["female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "housewarming", "anniversary"],
+        seasons: ["spring"],
+        relationships: ["partner", "friend", "family", "acquaintance"],
+        diversityGroup: "sachet_spray",
+        mbtiTraits: { E: 4, I: 6, S: 3, N: 7, T: 3, F: 7, J: 5, P: 5 },
+        baseReason: "이탈리아 피렌체의 전통 방식으로 만든 화사한 프리지아 꽃향기! 봄볕처럼 맑고 우아한 향기가 집안 곳곳을 향기롭게 물들여 줍니다.",
+        tags: ["#프리지아향기", "#꽃향기오브제", "#봄감성선물"]
+      },
+      {
+        id: "g_h10",
+        name: "감성 원터치 피크닉 릴렉스 체어 & 캔버스 바스켓 세트",
+        category: "리빙 / 피크닉",
+        priceRange: "50k_100k",
+        priceNumeric: 78000,
+        priceDisplay: "약 78,000원",
+        icon: "🧺",
+        badge: "봄 피크닉 워너비",
+        kakaotag: "감성캠프닉",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s"],
+        occasions: ["season", "birthday", "housewarming", "anniversary"],
+        seasons: ["spring"],
+        relationships: ["friend", "partner", "family"],
+        diversityGroup: "picnic",
+        mbtiTraits: { E: 6, I: 4, S: 5, N: 6, T: 4, F: 6, J: 4, P: 6 },
+        baseReason: "간편하게 펼쳐 앉을 수 있는 릴렉스 체어와 감성적인 피크닉 바스켓의 조합! 화창한 봄날 소중한 사람과 야외 여유를 즐기기에 완벽한 선물이에요.",
+        tags: ["#봄피크닉", "#캠프닉체어", "#화사한소품"]
+      },
+      {
+        id: "g_h11",
+        name: "아쿠아 디 파르마 미르토 디 파나레아 오 드 뚜왈렛 30ml",
+        category: "뷰티 / 향수",
+        priceRange: "50k_100k",
+        priceNumeric: 92000,
+        priceDisplay: "약 92,000원",
+        icon: "🌊",
+        badge: "지중해 청량 향수 1위",
+        kakaotag: "여름인생향수",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary"],
+        seasons: ["summer"],
+        relationships: ["partner", "friend"],
+        diversityGroup: "perfume_summer",
+        mbtiTraits: { E: 6, I: 4, S: 4, N: 6, T: 4, F: 6, J: 5, P: 5 },
+        baseReason: "푸른 지중해 바닷바람을 연상시키는 청량한 시트러스와 아로마틱 허브의 조화! 여름철 가장 세련되고 시원한 인상을 남기는 니치 향수입니다.",
+        tags: ["#청량한향수", "#미르토디파나레아", "#여름데일리향"]
+      },
+      {
+        id: "g_h12",
+        name: "알레르망 쿨링 모달 냉감 여름 패드 & 라탄 데스크 트레이 세트",
+        category: "리빙 / 여름침구",
+        priceRange: "50k_100k",
+        priceNumeric: 79000,
+        priceDisplay: "약 79,000원",
+        icon: "🧊",
+        badge: "시원한 여름 라이프",
+        kakaotag: "쿨링숙면",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "thanks", "birthday"],
+        seasons: ["summer"],
+        relationships: ["family", "partner", "friend", "acquaintance"],
+        diversityGroup: "cooling_item",
+        mbtiTraits: { E: 4, I: 6, S: 7, N: 3, T: 5, F: 6, J: 6, P: 4 },
+        baseReason: "열기를 빠르게 식혀주는 시원한 냉감 패드와 내추럴한 라탄 소품으로 여름밤의 쾌적한 숙면과 집안의 시원한 무드를 동시에 선물합니다.",
+        tags: ["#냉감침구", "#시원한소재", "#여름생활용품"]
+      },
+      {
+        id: "g_h13",
+        name: "파카(PARKER) 소네트 프리미엄 만년필 & 천연 가죽 북커버 세트",
+        category: "문구 / 독서용품",
+        priceRange: "50k_100k",
+        priceNumeric: 88000,
+        priceDisplay: "약 88,000원",
+        icon: "✒️",
+        badge: "클래식 문구 명작",
+        kakaotag: "가을지성미",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_late", "30s", "40s_plus"],
+        occasions: ["season", "graduation_job", "thanks", "birthday"],
+        seasons: ["autumn"],
+        relationships: ["colleague", "acquaintance", "family", "partner"],
+        diversityGroup: "reading_item",
+        mbtiTraits: { E: 2, I: 7, S: 5, N: 6, T: 6, F: 5, J: 7, P: 3 },
+        baseReason: "부드러운 필기감의 파카 만년필과 손때가 묻을수록 멋스러운 가죽 북커버 구성! 독서와 글쓰기를 즐기는 가을 감성에 깊이 있는 품격을 더해줍니다.",
+        tags: ["#감성문구류", "#독서용품", "#가을프리미엄"]
+      },
+      {
+        id: "g_h14",
+        name: "메리노울 100% 프리미엄 머플러 & TWG 티백 기프트 세트",
+        category: "패션 / 보온·티",
+        priceRange: "50k_100k",
+        priceNumeric: 95000,
+        priceDisplay: "약 95,000원",
+        icon: "🧣",
+        badge: "겨울 베스트 셀렉션",
+        kakaotag: "따뜻한품격",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary", "thanks"],
+        seasons: ["winter"],
+        relationships: ["partner", "family", "friend", "acquaintance"],
+        diversityGroup: "warm_wear",
+        mbtiTraits: { E: 4, I: 6, S: 5, N: 5, T: 4, F: 7, J: 6, P: 4 },
+        baseReason: "부드럽고 가벼운 메리노울 머플러로 체온을 지켜주고, TWG의 우아한 홍차 한 잔으로 마음까지 녹여주는 완벽한 겨울 시즌 선물입니다.",
+        tags: ["#겨울보온용품", "#따뜻한차", "#울머플러"]
+      },
+      {
+        id: "g_h15",
+        name: "루메나 무선 무드 가습기 & 온열 극세사 블랭킷 세트",
+        category: "리빙 / 환절기·겨울",
+        priceRange: "50k_100k",
+        priceNumeric: 75000,
+        priceDisplay: "약 75,000원",
+        icon: "💨",
+        badge: "계절 케어 1위",
+        kakaotag: "촉촉한온기",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "thanks", "birthday"],
+        seasons: ["between_seasons", "winter"],
+        relationships: ["friend", "family", "partner", "colleague"],
+        diversityGroup: "humidifier_care",
+        mbtiTraits: { E: 3, I: 6, S: 6, N: 4, T: 5, F: 6, J: 6, P: 4 },
+        baseReason: "건조한 환절기와 겨울 실내 습도를 촉촉하게 맞춰주는 미니멀 가습기와 포근한 블랭킷! 계절 변화 속 컨디션을 세심히 챙겨주는 실용적인 선물입니다.",
+        tags: ["#환절기생활용품", "#보습케어", "#겨울담요"]
       },
 
-      /* 5. 10만 원 이상 (over_100k) */
+      /* 5. 10만 원 이상 (over_100k: >= 100,000원) */
       {
         id: "g_v1",
         name: "애플 에어팟 프로 2세대 (액티브 노이즈 캔슬링)",
         category: "디지털 / 음향",
         priceRange: "over_100k",
+        priceNumeric: 329000,
         priceDisplay: "약 329,000원",
         icon: "🎧",
         badge: "세상과 단둘만의 음악",
@@ -2248,6 +3217,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["birthday", "graduation_job", "anniversary"],
+        seasons: ["all"],
+        relationships: ["partner", "family", "friend"],
+        diversityGroup: "earbuds",
         mbtiTraits: { E: 4, I: 7, S: 6, N: 5, T: 6, F: 4, J: 5, P: 5 },
         baseReason: "귀에 꽂는 순간 주변 소음이 마법처럼 사라지는 궁극의 몰입감! 출퇴근길과 집중이 필요한 순간마다 선물한 사람의 센스에 무한 감동하게 되는 프리미엄 테크 선물입니다.",
         tags: ["#에어팟프로2", "#노이즈캔슬링", "#워너비테크"]
@@ -2257,6 +3229,7 @@
         name: "다이슨 슈퍼소닉 헤어드라이어 오리지널 에디션",
         category: "가전 / 뷰티",
         priceRange: "over_100k",
+        priceNumeric: 490000,
         priceDisplay: "약 490,000원",
         icon: "💨",
         badge: "헤어케어의 혁명",
@@ -2264,6 +3237,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
         occasions: ["birthday", "anniversary", "housewarming"],
+        seasons: ["all"],
+        relationships: ["partner", "family"],
+        diversityGroup: "hair_dryer",
         mbtiTraits: { E: 5, I: 5, S: 6, N: 5, T: 5, F: 5, J: 6, P: 4 },
         baseReason: "열 손상 없이 초강력 바람으로 머리를 순식간에 말려 아침 시간을 획기적으로 줄여줘요! 매일 쓰는 필수 가전이라 쓸 때마다 행복해지는 최고의 선물입니다.",
         tags: ["#다이슨드라이기", "#모발케어", "#프리미엄가전"]
@@ -2273,6 +3249,7 @@
         name: "메종 마르지엘라 스티치 천연가죽 카드 홀더 지갑",
         category: "명품 / 패션",
         priceRange: "over_100k",
+        priceNumeric: 240000,
         priceDisplay: "약 240,000원",
         icon: "👛",
         badge: "프랑스 럭셔리 감성",
@@ -2280,6 +3257,9 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
         occasions: ["birthday", "anniversary", "graduation_job"],
+        seasons: ["all"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "wallet_card",
         mbtiTraits: { E: 4, I: 6, S: 3, N: 7, T: 4, F: 5, P: 6, J: 4 },
         baseReason: "시그니처 4-스티치 화이트 디테일로 조용한 럭셔리의 정점을 보여주는 카드지갑! 트렌디하고 감각적인 패션을 사랑하는 분에게 최고의 서프라이즈가 됩니다.",
         tags: ["#마르지엘라지갑", "#화이트스티치", "#2030워너비"]
@@ -2289,38 +3269,47 @@
         name: "딥티크 오 드 퍼퓸 75ml (플레르 드 뽀 / 도 손)",
         category: "명품 / 향수",
         priceRange: "over_100k",
+        priceNumeric: 260000,
         priceDisplay: "약 260,000원",
         icon: "✨",
         badge: "살냄새 니치 향수 1위",
         kakaotag: "독보적잔향",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_early", "20s_late", "30s"],
-        occasions: ["birthday", "anniversary"],
+        occasions: ["birthday", "anniversary", "season"],
+        seasons: ["autumn", "winter"],
+        relationships: ["partner", "friend"],
+        diversityGroup: "perfume_mist",
         mbtiTraits: { E: 4, I: 7, S: 2, N: 8, T: 2, F: 8, P: 6, J: 3 },
-        baseReason: "포근하고 관능적인 머스크와 아이리스가 어우러져 평생 기억될 나만의 시그니처 살냄새를 완성해요. 둘만의 특별한 기념일에 마음을 고백하기에 더할 나위 없습니다.",
-        tags: ["#플레르드뽀", "#딥티크본품", "#살냄새향수"]
+        baseReason: "포근하고 깊은 머스크와 아이리스가 어우러져 나만의 시그니처 잔향을 완성해요. 선선한 계절과 특별한 기념일에 마음을 전하기에 더할 나위 없습니다.",
+        tags: ["#플레르드뽀", "#딥티크본품", "#포근한잔향"]
       },
       {
         id: "g_v5",
         name: "서울신라호텔 더 파크뷰 디너 2인 프리미엄 식사권",
         category: "호텔 / 미식",
         priceRange: "over_100k",
+        priceNumeric: 360000,
         priceDisplay: "약 360,000원",
         icon: "🍽️",
         badge: "대한민국 3대 뷔페",
         kakaotag: "최고의미식경험",
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
-        occasions: ["anniversary", "birthday", "thanks"],
+        occasions: ["anniversary", "birthday", "thanks", "season"],
+        seasons: ["holiday", "all"],
+        relationships: ["partner", "family"],
+        diversityGroup: "hotel_dining",
         mbtiTraits: { E: 6, I: 4, S: 5, N: 4, T: 4, F: 6, J: 6, P: 4 },
-        baseReason: "물건보다 오래 남는 잊지 못할 미식의 추억! 최고급 식재료와 우아한 분위기 속에서 소중한 사람과 함께 나누는 가장 로맨틱하고 럭셔리한 하루를 선물하세요.",
-        tags: ["#신라호텔뷔페", "#더파크뷰", "#특별한데이트"]
+        baseReason: "물건보다 오래 남는 잊지 못할 미식의 추억! 최고급 식재료와 우아한 분위기 속에서 소중한 사람과 함께 나누는 가장 럭셔리한 하루를 선물하세요.",
+        tags: ["#신라호텔뷔페", "#더파크뷰", "#특별한식사"]
       },
       {
         id: "g_v6",
         name: "발뮤다 더 토스터기 K05B (스팀 홈베이커리)",
         category: "주방가전 / 리빙",
         priceRange: "over_100k",
+        priceNumeric: 289000,
         priceDisplay: "약 289,000원",
         icon: "🍞",
         badge: "죽은 빵도 살리는 마법",
@@ -2328,8 +3317,11 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["20s_late", "30s", "40s_plus"],
         occasions: ["housewarming", "anniversary", "birthday"],
+        seasons: ["winter", "autumn", "all"],
+        relationships: ["family", "partner", "friend"],
+        diversityGroup: "kitchen_appliance",
         mbtiTraits: { E: 4, I: 6, S: 6, N: 5, T: 5, F: 5, J: 6, P: 4 },
-        baseReason: "5cc의 물로 겉은 바삭하고 속은 촉촉한 갓 구운 빵의 맛을 재현하는 감성 가전의 명작! 집들이와 신혼부부에게 선물하면 칭찬이 끊이지 않는 베스트셀러입니다.",
+        baseReason: "5cc의 물로 겉은 바삭하고 속은 촉촉한 갓 구운 빵의 맛을 재현하는 감성 가전의 명작! 집들이와 가족 선물로 칭찬이 끊이지 않는 베스트셀러입니다.",
         tags: ["#발뮤다토스터", "#겉바속촉", "#홈카페로망"]
       },
       {
@@ -2337,6 +3329,7 @@
         name: "애플워치 SE 2세대 (GPS 모델 40mm / 44mm)",
         category: "디지털 / 스마트워치",
         priceRange: "over_100k",
+        priceNumeric: 329000,
         priceDisplay: "약 329,000원",
         icon: "⌚",
         badge: "스마트 라이프의 시작",
@@ -2344,9 +3337,172 @@
         targetGender: ["male", "female", "any"],
         targetAge: ["10s", "20s_early", "20s_late", "30s"],
         occasions: ["graduation_job", "birthday", "anniversary"],
+        seasons: ["all"],
+        relationships: ["partner", "family", "friend"],
+        diversityGroup: "smartwatch",
         mbtiTraits: { E: 5, I: 4, S: 7, N: 3, T: 6, F: 3, J: 7, P: 4 },
-        baseReason: "운동 체크, 수면 분석, 중요한 알림 확인까지 손목 위에서 하루를 똑똑하게 관리해 줘요! 실용성과 패션을 동시에 잡는 모두의 위시리스트 스마트 디바이스입니다.",
+        baseReason: "운동 체크, 수면 분석, 중요한 알림 확인까지 손목 위에서 하루를 똑똑하게 관리해 줘요! 실용성과 패션을 동시에 잡는 스마트 디바이스입니다.",
         tags: ["#애플워치SE", "#스마트워치", "#데일리필수템"]
+      },
+      {
+        id: "g_v8",
+        name: "바이레도(BYREDO) 라 튤립 오 드 퍼퓸 50ml",
+        category: "명품 / 플로럴 향수",
+        priceRange: "over_100k",
+        priceNumeric: 245000,
+        priceDisplay: "약 245,000원",
+        icon: "🌷",
+        badge: "봄의 시작 시그니처",
+        kakaotag: "생화튤립향",
+        targetGender: ["female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary"],
+        seasons: ["spring"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "perfume_spring",
+        mbtiTraits: { E: 5, I: 5, S: 3, N: 7, T: 3, F: 7, J: 4, P: 6 },
+        baseReason: "이슬 맺힌 갓 핀 튤립의 맑고 싱그러운 꽃향기를 고스란히 담아내 봄의 설렘을 전하는 럭셔리 플로럴 퍼퓸입니다.",
+        tags: ["#바이레도라튤립", "#봄꽃향수", "#화사한프리미엄"]
+      },
+      {
+        id: "g_v9",
+        name: "크레모아 & 헬리녹스 감성 피크닉·캠핑 무드 랜턴 세트",
+        category: "리빙 / 피크닉",
+        priceRange: "over_100k",
+        priceNumeric: 148000,
+        priceDisplay: "약 148,000원",
+        icon: "🏮",
+        badge: "봄나들이·글램핑 1위",
+        kakaotag: "야외무드완성",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "housewarming", "anniversary"],
+        seasons: ["spring"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "picnic",
+        mbtiTraits: { E: 6, I: 4, S: 5, N: 6, T: 5, F: 5, J: 4, P: 6 },
+        baseReason: "화창한 봄 피크닉부터 저녁 노을 무렵 나들이까지 아늑한 빛으로 채워주는 프리미엄 아웃도어 라이프 선물입니다.",
+        tags: ["#봄피크닉", "#캠핑랜턴", "#감성나들이"]
+      },
+      {
+        id: "g_v10",
+        name: "아쿠아 디 파르마 콜로니아 / 바이레도 집시 워터 시트러스 퍼퓸 50ml",
+        category: "명품 / 여름 향수",
+        priceRange: "over_100k",
+        priceNumeric: 230000,
+        priceDisplay: "약 230,000원",
+        icon: "🍋",
+        badge: "여름 프리미엄 퍼퓸",
+        kakaotag: "청량한우드",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary"],
+        seasons: ["summer"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "perfume_summer",
+        mbtiTraits: { E: 5, I: 5, S: 4, N: 6, T: 4, F: 6, J: 5, P: 5 },
+        baseReason: "상큼한 베르가못과 레몬, 산뜻한 주니퍼 베리가 어우러져 무더운 여름에도 세련되고 청량한 분위기를 완성해 주는 니치 향수입니다.",
+        tags: ["#청량한향수", "#여름니치향수", "#세련된시트러스"]
+      },
+      {
+        id: "g_v11",
+        name: "세사리빙 / 알레르망 프리미엄 풍기인견 여름 이불 풀세트",
+        category: "리빙 / 여름침구",
+        priceRange: "over_100k",
+        priceNumeric: 185000,
+        priceDisplay: "약 185,000원",
+        icon: "🌊",
+        badge: "여름 효도·집들이 1위",
+        kakaotag: "프리미엄냉감",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["30s", "40s_plus"],
+        occasions: ["season", "housewarming", "thanks", "birthday"],
+        seasons: ["summer"],
+        relationships: ["family", "partner", "acquaintance"],
+        diversityGroup: "cooling_item",
+        mbtiTraits: { E: 3, I: 6, S: 7, N: 3, T: 5, F: 6, J: 6, P: 4 },
+        baseReason: "통기성과 땀 흡수력이 뛰어난 최고급 인견 소재로 열대야에도 뽀송하고 시원한 숙면을 선물하는 프리미엄 여름 침구 세트입니다.",
+        tags: ["#풍기인견이불", "#시원한소재", "#여름꿀잠"]
+      },
+      {
+        id: "g_v12",
+        name: "크레마(CREMA) 모티프 이북 리더기 & 천연가죽 북 파우치",
+        category: "디지털 / 독서용품",
+        priceRange: "over_100k",
+        priceNumeric: 219000,
+        priceDisplay: "약 219,000원",
+        icon: "📚",
+        badge: "독서인 워너비 1위",
+        kakaotag: "눈이편한독서",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["10s", "20s_early", "20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "graduation_job", "anniversary"],
+        seasons: ["autumn"],
+        relationships: ["partner", "friend", "family"],
+        diversityGroup: "reading_item",
+        mbtiTraits: { E: 2, I: 8, S: 4, N: 7, T: 6, F: 5, J: 6, P: 4 },
+        baseReason: "종이책처럼 눈이 편안한 전자잉크 디스플레이로 언제 어디서나 수백 권의 책을 가볍게 즐길 수 있는 가을 독서 라이프의 결정판입니다.",
+        tags: ["#이북리더기", "#가을독서용품", "#취미선물"]
+      },
+      {
+        id: "g_v13",
+        name: "캐시미어 100% 프리미엄 머플러 & 장갑·울 블랭킷 기프트 세트",
+        category: "패션 / 겨울보온",
+        priceRange: "over_100k",
+        priceNumeric: 168000,
+        priceDisplay: "약 168,000원",
+        icon: "🧣",
+        badge: "겨울 럭셔리 보온",
+        kakaotag: "캐시미어100%",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_late", "30s", "40s_plus"],
+        occasions: ["season", "birthday", "anniversary", "thanks"],
+        seasons: ["winter"],
+        relationships: ["partner", "family", "acquaintance"],
+        diversityGroup: "warm_wear",
+        mbtiTraits: { E: 4, I: 6, S: 6, N: 5, T: 4, F: 7, J: 6, P: 4 },
+        baseReason: "최고급 100% 캐시미어의 포근하고 가벼운 보온력으로 추운 겨울 내내 몸과 마음을 따뜻하게 감싸주는 품격 있는 겨울 선물입니다.",
+        tags: ["#캐시미어머플러", "#겨울보온용품", "#프리미엄담요"]
+      },
+      {
+        id: "g_v14",
+        name: "LG 퓨리케어 자연기화식 미니 가습·공기케어 에디션",
+        category: "가전 / 환절기케어",
+        priceRange: "over_100k",
+        priceNumeric: 249000,
+        priceDisplay: "약 249,000원",
+        icon: "🌬️",
+        badge: "환절기 실내 케어",
+        kakaotag: "쾌적한공간",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["20s_late", "30s", "40s_plus"],
+        occasions: ["season", "housewarming", "thanks", "birthday"],
+        seasons: ["between_seasons", "winter"],
+        relationships: ["family", "partner", "acquaintance"],
+        diversityGroup: "humidifier_care",
+        mbtiTraits: { E: 3, I: 6, S: 7, N: 4, T: 6, F: 5, J: 7, P: 3 },
+        baseReason: "일교차와 미세먼지가 잦은 환절기에 실내 공기와 습도를 위생적으로 관리해 주어 받는 분의 호흡기와 컨디션을 지켜주는 프리미엄 생활가전입니다.",
+        tags: ["#환절기필수템", "#자연기화식", "#웰니스선물"]
+      },
+      {
+        id: "g_v15",
+        name: "프리미엄 1++ 한우 미식 선물세트 / 정관장 홍삼정 240g 명절 에디션",
+        category: "푸드 / 명절프리미엄",
+        priceRange: "over_100k",
+        priceNumeric: 220000,
+        priceDisplay: "약 220,000원",
+        icon: "🏮",
+        badge: "명절 최고급 선물",
+        kakaotag: "품격의정점",
+        targetGender: ["male", "female", "any"],
+        targetAge: ["30s", "40s_plus"],
+        occasions: ["season", "thanks", "birthday"],
+        seasons: ["holiday"],
+        relationships: ["family", "acquaintance", "colleague"],
+        diversityGroup: "holiday_food",
+        mbtiTraits: { E: 5, I: 4, S: 7, N: 3, T: 5, F: 6, J: 7, P: 3 },
+        baseReason: "소중한 가족과 감사한 어른들께 풍성한 마음과 최상급 품격을 함께 전할 수 있는 대한민국 대표 명절 프리미엄 선물입니다.",
+        tags: ["#명절프리미엄", "#한우홍삼세트", "#부모님효도"]
       }
     ];
 
